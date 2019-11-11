@@ -15,7 +15,18 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('label');
+            $table->text('description');
+            $table->string('location');
+            $table->dateTime('date');
+            $table->float('price');
+            $table->boolean('recurring');
+            $table->boolean('hidden');
             $table->timestamps();
+
+            $table->unsignedBigInteger('meta_event_id');
+            $table->foreign('meta_event_id')->references('id')->on('meta_events');
         });
     }
 

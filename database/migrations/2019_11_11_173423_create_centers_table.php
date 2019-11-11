@@ -15,6 +15,8 @@ class CreateCentersTable extends Migration
     {
         Schema::create('centers', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('name');
             $table->timestamps();
         });
     }

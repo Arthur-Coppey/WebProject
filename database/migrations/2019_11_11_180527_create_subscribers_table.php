@@ -14,8 +14,12 @@ class CreateSubscribersTable extends Migration
     public function up()
     {
         Schema::create('subscribers', function (Blueprint $table) {
-            $table->bigIncrements('id');
             $table->timestamps();
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('meta_event_id');
+            $table->foreign('meta_event_id')->references('id')->on('meta_events');
         });
     }
 

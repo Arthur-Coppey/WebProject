@@ -15,7 +15,19 @@ class CreateMetaEventsTable extends Migration
     {
         Schema::create('meta_events', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('label');
+            $table->text('description');
+            $table->string('location');
+            $table->dateTime('start_date');
+            $table->integer('occurrences');
+            $table->integer('frequency');
+            $table->float('price');
+            $table->boolean('hidden');
             $table->timestamps();
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -14,8 +14,13 @@ class CreateIdeasLikesTable extends Migration
     public function up()
     {
         Schema::create('ideas_likes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->boolean('like');
             $table->timestamps();
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('idea_id');
+            $table->foreign('idea_id')->references('id')->on('ideas');
         });
     }
 

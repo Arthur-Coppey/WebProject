@@ -14,8 +14,13 @@ class CreateBasketTable extends Migration
     public function up()
     {
         Schema::create('basket', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('amount');
             $table->timestamps();
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

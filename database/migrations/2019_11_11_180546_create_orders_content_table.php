@@ -14,8 +14,13 @@ class CreateOrdersContentTable extends Migration
     public function up()
     {
         Schema::create('orders_content', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('amount');
             $table->timestamps();
+
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->unsignedBigInteger('order_id');
+            $table->foreign('order_id')->references('id')->on('orders');
         });
     }
 
