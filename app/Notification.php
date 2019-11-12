@@ -14,4 +14,12 @@ class Notification extends Model
     protected $fillable = [
         'response_status', 'idea_id', 'user_id',
     ];
+
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
+
+    public function idea() {
+        return $this->belongsTo('App\Idea');
+    }
 }

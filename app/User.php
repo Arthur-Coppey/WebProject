@@ -40,11 +40,51 @@ class User extends Authenticatable
         return $this->belongsTo('App\Center');
     }
 
+    public function role() {
+        return $this->belongsTo('App\Role');
+    }
+
+    public function orders() {
+        return $this->hasMany('App\Orders');
+    }
+
     public function participates() {
-        return $this->belongsTo('App\Event');
+        return $this->belongsToMany('App\Event', 'participants')
+            ->using('App\Participants');
     }
 
     public function basket() {
-        return $this->belongsToMany('App\Product', 'basket')->as('basket')->using('App\Basket')->withPivot(['amount']);
+        return $this->belongsToMany('App\Product', 'basket')
+            ->as('basket')
+            ->using('App\Basket')
+            ->withPivot(['amount']);
+    }
+
+    public function votes() {
+        return $this->belongsToMany('App\Idea', 'ideas_likes')
+            ->as('vote')
+            ->using('App\IdeaLike')
+            ->withPivot(['like']);
+    }
+
+    public function pictures() {
+        return $this->hasMany('App\Picture');
+    }
+
+    public function subscribes() {
+        return $this->belongsToMany('App\MetaEvent', 'subscribers')
+            ->using('App\Subscriber');
+    }
+
+    public function comments() {
+        return $this->hasMany('App\Comment');
+    }
+
+    public function ideas() {
+        return $this->hasMany('App\Idea');
+    }
+
+    public function notifs() {
+        return $this->hasMany('App\Notification');
     }
 }
