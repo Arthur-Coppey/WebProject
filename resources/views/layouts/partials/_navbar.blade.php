@@ -14,17 +14,18 @@
 
             <td>
                 <button type="button" class="headerRight btn btn-primary btn-sm">
-                    <p class="loginRegisterText">Inscription</p>
+                    <a href="/sign-in" class="loginRegisterText">Inscription</a>
                 </button>
             </td>
             <td>
                 <button type="button" class="ouvrir headerRight btn btn-secondary btn-sm">
-                        <a href="#volet" class="loginRegisterText">Connexion</a>
+                        <a href="#volet" class="loginRegisterText" >Connexion</a>
                 </button>       
             </td>
         </tr>
     </tbody>
 </table>
+
 
 
 <div id="volet_clos">
@@ -46,4 +47,3 @@
 		</div>
 	</div>
 </div>
-
