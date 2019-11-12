@@ -12,6 +12,6 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'label', 'descrition', 'location', 'date', 'price', 'recurring', 'hidden',
+        'label', 'descrition', 'location', 'date', 'price', 'recurring', 'hidden', 'meta_event_id'
     ];
 }
