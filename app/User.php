@@ -43,4 +43,8 @@ class User extends Authenticatable
     public function participates() {
         return $this->belongsTo('App\Event');
     }
+
+    public function basket() {
+        return $this->belongsToMany('App\Product', 'basket')->as('basket')->using('App\Basket')->withPivot(['amount']);
+    }
 }

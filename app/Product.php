@@ -14,4 +14,8 @@ class Product extends Model
     protected $fillable = [
         'label', 'description', 'price', 'center_id',
     ];
+
+    public function basket() {
+        return $this->belongsToMany('App\User', 'basket')->as('basket')->using('App\Basket')->withPivot(['amount']);
+    }
 }
