@@ -1,0 +1,76 @@
+/* Footer */
+
+/* couleur et taille du footer */
+.footer {
+    background-color: #5c88da;
+    width: auto;
+    height: auto;
+}
+
+/* partie supérieure du footer avec contact etc.. */
+.footer-text {
+    background-color: #5c88da;
+    border-collapse: separate;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* partie inférieure du footer avec réseaux sociaux */
+.footer-icon {
+    background-color: #5c88da;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* trait séparant la partie supérieure du footer
+    de la partie inférieure du footer */
+.barreMid {
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 1px;
+}
+
+/* chaque lien de la partie supérieure du footer */
+.item-text-footer {
+    color: white;
+    text-decoration-color: #5c88da;
+    margin: 0 auto;
+    font-size: 0.8em;
+    padding-right: 6vw;
+}
+
+/* change la couleur des liens quand on passe la souris dessus */
+.item-text-footer:hover {
+    color: gold;
+}
+
+/* chaque icone des réseaux sociaux */
+.fab {
+    color: black;
+    font-size: 4vw;
+    margin-right: 75px;
+    margin-left: 75px;
+    margin-bottom: 20px;
+}
+
+/* icone Facebook */
+.fa-facebook:hover {
+    color: #3b5998;
+}
+
+/* icone Instagram */
+.fa-instagram:hover {
+    color: #833ab4;
+}
+
+/* icone Twitter */
+.fa-twitter:hover {
+    color: #33ccff;
+}
+
+/* icone Linkedin */
+.fa-linkedin:hover {
+    color: #2977c9;
+}

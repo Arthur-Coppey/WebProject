@@ -12,5 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+
+Route::get('event', function () {
+    return view('event');
+});
+
+Route::get('shop', function () {
+    return view('shop');
+});
+
+Route::get('contact', function () {
+    return view('contact');
+});
+
+Route::get('mentionsLegales', function () {
+    return view('mentionsLegales');
+});
+
