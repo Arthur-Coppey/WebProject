@@ -1,9 +1,9 @@
 <?php
 
-use App\Product;
+use App\Idea;
 use Illuminate\Database\Seeder;
 
-class ProductsTableSeeder extends Seeder
+class IdeasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,14 +12,13 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        Product::truncate();
+        Idea::troncate();
         $faker = \Faker\Factory::create();
         for ($i = 0; $i < 10; $i++){
-            Product::create([
-                'label' => $faker->lastName,
+            Idea::create([
+                'title' => $faker->lastName,
                 'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-                'price' => '10.00',
-                'center_id' => rand(1, 12)
+                'user_id' => rand(1, 10)
             ]);
         }
     }
