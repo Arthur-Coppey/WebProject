@@ -12,6 +12,10 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'label', 'descrition', 'location', 'date', 'price', 'recurring', 'hidden', 'meta_event_id'
+        'label', 'description', 'location', 'date', 'price', 'recurring', 'hidden', 'meta_event_id'
     ];
+
+    public function participants() {
+        return $this->belongsTo('App\User');
+    }
 }

@@ -35,4 +35,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function center() {
+        return $this->belongsTo('App\Center');
+    }
+
+    public function participates() {
+        return $this->belongsTo('App\Event');
+    }
 }
