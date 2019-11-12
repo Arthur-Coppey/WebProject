@@ -12,6 +12,6 @@ class Picture extends Model
      * @var array
      */
     protected $fillable = [
-        'URI', 'hidden',
+        'URI', 'hidden', 'event_id', 'product_id', 'user_id',
     ];
 }
