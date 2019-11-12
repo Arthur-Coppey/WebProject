@@ -13,6 +13,7 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
 

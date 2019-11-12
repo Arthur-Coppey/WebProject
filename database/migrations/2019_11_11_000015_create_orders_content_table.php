@@ -13,6 +13,7 @@ class CreateOrdersContentTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('orders_content', function (Blueprint $table) {
             $table->integer('amount');
             $table->timestamps();

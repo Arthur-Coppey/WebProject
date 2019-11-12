@@ -13,6 +13,7 @@ class CreateParticipantsTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('participants', function (Blueprint $table) {
             $table->timestamps();
 

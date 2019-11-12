@@ -13,6 +13,7 @@ class CreateSubscribersTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('subscribers', function (Blueprint $table) {
             $table->timestamps();
 

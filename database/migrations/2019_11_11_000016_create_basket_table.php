@@ -13,6 +13,7 @@ class CreateBasketTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('basket', function (Blueprint $table) {
             $table->integer('amount');
             $table->timestamps();

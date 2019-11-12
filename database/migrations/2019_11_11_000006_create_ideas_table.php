@@ -13,6 +13,7 @@ class CreateIdeasTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('ideas', function (Blueprint $table) {
             $table->bigIncrements('id');
 

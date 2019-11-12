@@ -13,6 +13,7 @@ class CreatePicturesTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('pictures', function (Blueprint $table) {
             $table->bigIncrements('id');
 

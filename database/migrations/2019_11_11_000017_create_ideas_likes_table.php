@@ -13,6 +13,7 @@ class CreateIdeasLikesTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('ideas_likes', function (Blueprint $table) {
             $table->boolean('like');
             $table->timestamps();

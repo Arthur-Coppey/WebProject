@@ -13,6 +13,7 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
 
