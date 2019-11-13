@@ -1,3 +1,5 @@
+var a = 0;
+var i;
 window.onload = function () { //Quand la page est chargé sinon ça return null;
     var but = document.getElementById("submitBut");
     var password1 = document.getElementById("password1");
@@ -10,7 +12,7 @@ function verif() {
     var passSplit = password1.value.split('');
     var uppercase = false;
 
-    for (var i = 0; i < password1.value.length; i++) {
+    for (i = 0; i < password1.value.length; i++) {
         if (/^.*[A-Z]$/.test(passSplit[i])) { //check if there is at least one uppercase
             i = password1.value.length + 1; //stop loop
             if (password1.value == password2.value) { //check both pass
@@ -28,10 +30,11 @@ function verif() {
 }
 
 function alertError() {
-    var a = 0;
     a++;
     if (a == 1) {
+
         alert("Erreur, vérifis bien de mettre au minimum une majuscule");
+
     }
-    a = 0;
+
 }

@@ -20,7 +20,7 @@
 
  
         <form>
-        <div class="form-group input-group">
+         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
@@ -77,7 +77,7 @@
                 <option value="24">Strasbourg</option>
                 <option value="25">Toulouse</option>
 
-            </select>  
+            </select> 
 
         </div> <!-- form-group end.// -->
         <div class="form-group input-group">
