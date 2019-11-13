@@ -5,6 +5,7 @@
 
 <!-- JS -->
 <script src="js/sideBar.js"></script>
+<script src="js/signCondition.js"></script>
 
 <!-- CSS -->
 <link href="style/footer.css" rel="stylesheet">

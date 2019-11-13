@@ -31,6 +31,16 @@ Route::get('mentionsLegales', function () {
     return view('mentionsLegales');
 });
 
+
 Route::get('aPropos', function () {
     return view('aPropos');
 });
+
+Route::get('sign-in', function () {
+    return view('sign-in');
+});
+
+Route::get('log-in', function () {
+    return view('log-in');
+});
+
