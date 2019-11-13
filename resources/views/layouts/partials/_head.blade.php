@@ -11,6 +11,7 @@
 <link href="style/body.css" rel="stylesheet">
 <link href="style/navbar.css" rel="stylesheet">
 <link href="style/log.css" rel="stylesheet">
+<link href="style/flow_display.css" rel="stylesheet">
 
 <!-- W3 -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
