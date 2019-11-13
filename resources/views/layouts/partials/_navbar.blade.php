@@ -14,17 +14,19 @@
 
             <td>
                 <button type="button" class="headerRight btn btn-primary btn-sm">
-                    <p class="loginRegisterText">Inscription</p>
+                    <a href="/sign-in" class="loginRegisterText" style = "text-decoration: none; color :white">Inscription</a>
                 </button>
             </td>
             <td>
                 <button type="button" class="ouvrir headerRight btn btn-secondary btn-sm">
-                        <a href="#volet" class="loginRegisterText">Connexion</a>
+                        {{-- <a href="#volet" class="loginRegisterText" style = "text-decoration: none; color :white">Connexion</a> --}}
+                        <a href="/log-in" class="loginRegisterText" style = "text-decoration: none; color :white">Connexion</a>
                 </button>       
             </td>
         </tr>
     </tbody>
 </table>
+
 
 
 <div id="volet_clos">
@@ -46,4 +48,3 @@
 		</div>
 	</div>
 </div>
-

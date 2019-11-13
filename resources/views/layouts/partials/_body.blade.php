@@ -7,9 +7,9 @@
 
     <div class="nextEvents">
 
-        <h2 style="font-size: 2vw;">Nos prochains événements</h2>
+        <h2 class="bodyTitle" style="font-size: 2vw;">Nos prochains événements</h2>
 
-        <hr width="50%" color="black">
+        <hr class="traitSeparation" width="50%" color="black">
 
         <table class="events">
             <tbody>
@@ -29,14 +29,13 @@
                 </tr>
             </tbody>
         </table>
-
     </div>
 
     <div class="shopPreview">
 
-        <h2 style="font-size: 2vw;">Articles</h2>
+        <h2 class="bodyTitle" style="font-size: 2vw;">Articles</h2>
 
-        <hr width="50%" color="black">
+        <hr class="traitSeparation" width="50%" color="black">
 
         <table class="articles">
             <tbody>
@@ -56,7 +55,5 @@
                 </tr>
             </tbody>
         </table>
-
     </div>
-
 </div>
