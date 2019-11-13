@@ -1,9 +1,9 @@
 <?php
 
-use App\Product;
+use App\Event;
 use Illuminate\Database\Seeder;
 
-class ProductsTableSeeder extends Seeder
+class EventsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,14 +12,16 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        Product::truncate();
+        Event::truncate();
         $faker = \Faker\Factory::create();
         for ($i = 0; $i < 10; $i++){
-            Product::create([
+            Event::create([
                 'label' => $faker->lastName,
                 'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+                'location' => 'salle '.rand(101, 109),
+                'date' => dayOfWeek().' '.dayOfMonth().' '.monthName().' '.year($min = 'now', $max = 2020),
                 'price' => '10.00',
-                'center_id' => rand(1, 12)
+                'reccuring' => rand(0, 1),
             ]);
         }
     }
