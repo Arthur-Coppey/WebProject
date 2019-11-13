@@ -38,6 +38,3 @@ Route::get('sign-in', function () {
 Route::get('log-in', function () {
     return view('log-in');
 });
-
-
-
