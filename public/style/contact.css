@@ -1,0 +1,46 @@
+/* Contact */
+
+.text-contact {
+    font-size: 1.2vw;
+}
+
+.contact-table {
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+    width: 100%;
+}
+
+.contact-item {
+    text-align: center;
+    width: 33%;
+}
+
+.tel {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.contact-title {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    text-align: center;
+    font-size: 3vw;
+    font-family: roboto, sans-serif;
+}
+
+.icones-contact {
+    font-size: 2vw;
+    padding-bottom: 1vw;
+    color: #5c88da;
+}
+
+.icones-contact:hover {
+    color: rgb(255, 194, 82);
+}
+
+.imageCampus {
+    width: 30vw;
+    padding-bottom: 2vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
+}

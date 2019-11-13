@@ -7,7 +7,7 @@
 @endsection('navbar')
 @section('main')
 
-<div class="text-mentions-legales" padding="2vw">
+<div class="text-mentions-legales">
 <strong>La seule contrepartie à l'utilisation de ces mentions légales, est l'engagement total à laisser le lien crédit subdelirium sur cette page de mentions légales.</strong><br />
 Vos mentions légales :
 <h2>Informations légales</h2>
@@ -20,8 +20,7 @@ Le responsable publication est une personne physique ou une personne morale.<br 
 <strong>Webmaster</strong> : Xavier LABARBE – xavier.labarbe@viacesi.fr<br />
 <strong>Hébergeur</strong> : Xavier LABARBE – Dans les Landes<br />
 Crédits : Front-End : Pierre FORQUES, Axel GALAND
-Back-End : Quentin LAURENSON, Xavier LABARBE, Arthur COPEY<br />
-Le modèle de mentions légales est offert par Subdelirium.com <a target="_blank" href="https://www.subdelirium.com/generateur-de-mentions-legales/" alt="Modèle de mentions légales">Modèle de mentions légales</a></p>
+Back-End : Quentin LAURENSON, Xavier LABARBE, Arthur COPPEY<br />
 
 <h3>2. Conditions générales d’utilisation du site et des services proposés.</h3>
 <p>L’utilisation du site <a href="http://www.BDECesiBordeaux.fr/">www.BDECesiBordeaux.fr</a> implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment, les utilisateurs du site <a href="http://www.BDECesiBordeaux.fr/">www.BDECesiBordeaux.fr</a> sont donc invités à les consulter de manière régulière.</p>
