@@ -1,0 +1,40 @@
+/* A Propos du BDE */
+
+.titresApropos {
+    padding-top: 1vw;
+    padding-bottom: 2vw;
+    text-align: center;
+    font-size: 4vw;
+    font-family: roboto, sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #5c88da;
+}
+
+.imageMembre {
+    width: 10em;
+    height: auto;
+}
+
+.asso {
+    padding-bottom: 2vw;
+}
+
+.associations {
+    padding-bottom: 2vw;
+}
+
+.membre {
+    padding-bottom: 1vw;
+}
+
+::selection {
+    background-color: #5c88da;
+    color: white;
+}
+
+/* Firefox */
+::-moz-selection {
+    background-color: #5c88da;
+    color: white;
+}

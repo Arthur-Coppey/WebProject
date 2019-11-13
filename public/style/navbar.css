@@ -1,0 +1,45 @@
+.headerTable tr {
+    box-shadow: 0 2px 4px -2px black;
+    width: auto;
+}
+
+/* table td,
+tr {
+    border: 1px solid black;
+} */
+
+.headerMiddle {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 3vw;
+    vertical-align: middle;
+}
+
+.navvbarImg {
+    text-align: left;
+}
+
+.headerRight {
+    margin: 10px;
+    height: 3vw;
+    width: 8vw;
+}
+
+.loginRegisterText {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    font-size: 1vw;
+}
+
+/* @media screen and (max-width: 640px) {
+    table,
+    tbody,
+    tr,
+    td {
+      display: block;
+      width: auto!important;
+    }
+  } */
