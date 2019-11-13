@@ -45,14 +45,6 @@ Route::get('log-in', function () {
 });
 
 Route::post('user', function () {
-    // $this->validate(request(), [
-    //     'first_name'=>'required',
-    //     'last_name' =>'required',
-    //     'email' => 'required|email',
-    //     'center' => 'required',
-    //     'password' => 'required',
-    //     'password_confirm' =>'required|same:password'
-    // ]);
 
     App\User::create([
       'first_name' => request('first_name'),
