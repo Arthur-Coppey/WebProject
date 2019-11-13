@@ -11,9 +11,13 @@
       <h3 class="mb-0">{{$article->label}}</h3>
       <div class="mb-1 text-muted">{{$article->created_at}}</div>
     <p class="card-text mb-auto">{{$article->description}}</p>
+    <button type="submit" id="submitBut" class="btn btn-primary btn-block">Je l'achète</button>
+
     </div>
+    
     <div class="col-auto d-none d-lg-block">
     <img src="/img/boof.png" alt="{{$article->label}}">
     </div>
+
   </div>
 @endsection
