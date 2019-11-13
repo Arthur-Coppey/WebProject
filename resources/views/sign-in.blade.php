@@ -18,7 +18,7 @@
     <article class="card-body mx-auto" style="max-width: 400px;">
         <h4 class="card-title mt-3 text-center">Inscris toi !</h4>
 
-
+ 
         <form>
         <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -77,33 +77,34 @@
                 <option value="24">Strasbourg</option>
                 <option value="25">Toulouse</option>
 
-            </select>
+            </select>  
 
         </div> <!-- form-group end.// -->
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
             </div>
-            <input class="form-control" placeholder="Mot de passe" type="password" required>
+            <input id="password1" class="form-control" placeholder="Mot de passe" type="password" required>
         </div> 
+
+        <a id="errorMsg"><a>
 
         <!-- form-group// -->
         <div class="form-group input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
             </div>
-            <input class="form-control" placeholder="Repeat password" type="password" required>
-        </div> 
+            <input value="" id="password2" class="form-control" placeholder="Verificaion mot de passe" type="password" required>
+        </div>  
         
         <!-- form-group// -->                                      
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Validation</button>
+            <button value="" type="submit" id="submitBut" class="btn btn-primary btn-block">Validation</button>
         </div> 
         <!-- form-group// -->      
         <div class="text-center">
-                <a>Tu possèdes déjà un compte ?</a><br>
-                <a href="/log-in">Connecte toi</a>    
-        
+            <a>Tu possèdes déjà un compte ?</a><br>
+            <a href="/log-in">Connecte toi</a>
         </div>
                                                                 
     </form>
