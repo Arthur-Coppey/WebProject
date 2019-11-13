@@ -57,3 +57,7 @@ Route::post('user', function () {
 
   return redirect('/');
 });
+
+Route::get('shop/{label}', function ($label) {
+    return view('article')->with('label', $label);
+});

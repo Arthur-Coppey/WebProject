@@ -5,7 +5,7 @@
                 <button class="w3-button w3-white w3-xlarge" onclick="w3_open()" >&#9776;</button>
             </td>
             <td style="width: 19%">
-                <a class="navbarImg" href="/"><img class="responsive" src="img/logoBDE.png" style="height: 7vw">
+                <a class="navbarImg" href="/"><img class="responsive" src="/img/logoBDE.png" style="height: 7vw">
             </td>
 
             <td class="headerMiddle">

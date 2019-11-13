@@ -15,12 +15,14 @@
 
 				<!-- début block -->
 				<!-- aria-label pour une future bar de recherche -->
-
-				@ 
-				$description = "une decription avec overflow aaaaaaaaaabbbbbbbbbbccccccccccccddddddddd";
-				
-				
-				<a aria-label="nom produit" class="gallery-item-card-container">
+				@php
+					$products = App\Product::all();
+				@endphp
+				@foreach ($products as $product)
+				@php
+					$label = $product->label;
+				@endphp
+			<a href="/shop/{{$label}}" aria-label="nom produit" class="gallery-item-card-container">
 					<div class="gallery-item-card">
 						<div class="cover">
 							<div class="icon-cell">
@@ -28,20 +30,22 @@
 							</div>
 							<div class="core-info-cell">
 								<div class="name">
-									<span>nom produit</span>
+								<span>{{$product->label}}</span>
 								</div>
 								<div class="core-info-second-row">
 									<div class="price">
-										<span>prix</span>
+										<span>{{$product->price}}€</span>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="item-details">
-							<div class="description">descriptiontest</div>
+							<div class="description">{{$product->description}}</div>
 						</div>
 					</div>
 				</a>
+				@endforeach
+				
 				
 				<!-- fin block -->
 			</div>
