@@ -19,9 +19,10 @@ class EventsTableSeeder extends Seeder
                 'label' => $faker->lastName,
                 'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
                 'location' => 'salle '.rand(101, 109),
-                'date' => dayOfWeek().' '.dayOfMonth().' '.monthName().' '.year($min = 'now', $max = 2020),
+                'date' => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'price' => '10.00',
-                'reccuring' => rand(0, 1),
+                'recurring' => rand(0, 1),
+                'meta_event_id' => rand(1, 10),
             ]);
         }
     }
