@@ -44,6 +44,10 @@ Route::get('log-in', function () {
     return view('log-in');
 });
 
+Route::get('basket', function () {
+    return view('basket');
+});
+
 Route::post('user', function () {
 
     App\User::create([
