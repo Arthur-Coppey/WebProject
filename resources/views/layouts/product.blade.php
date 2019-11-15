@@ -7,6 +7,7 @@
         <header>
             @include('layouts/partials/_sidebar')
             @include('layouts/partials/_navbar')
+            <br>
         </header>
 
         <main>

@@ -49,18 +49,16 @@ Route::get('basket', function () {
     return view('basket');
 });
 
-Route::post('user', function () {
+Route::post('/shop/addBasket', function () {
 
-//     App\User::create([
-//       'first_name' => request('first_name'),
-//       'last_name' => request('last_name'),
-//       'email' => request('email'),
-//       'password' => request('password'),
-//       'center_id' => request('center'),
-//       'role_id' => '1'
-//   ]);
+      $id = \Auth::user()->id;
+    App\Basket::create([
+      'amount' => request('amount'),
+      'user_id' => $id,
+      'product_id' => request('product_id')
+  ]);
 
-//   return redirect('/');
+  return redirect('/shop');
 });
 
 Route::get('shop/{label}', function ($label) {
@@ -73,7 +71,7 @@ Route::get('event/{label}', function ($label) {
 
 Auth::routes();
 
-Route::get('panier', function () {
+Route::get('panier', function ($user_id, $product_id) {
     return view('panier');
 });
 
@@ -87,3 +85,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('profile', function () {
     return view('profile');
 });
+
+
