@@ -1,3 +1,21 @@
+<div id="accordeon">
+    <div class="card">
+        <div class="collapse show" id="item1">
+            <div class="card-body">
+                    <p class="card-text">
+                        En poursuivant la navigation sur ce site, vous acceptez l'utilisation de Cookies pour vous proposer un contenu personnalisés et adaptés à vos centres d'intérêts
+                    </p>
+                    <a href="https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loihttps://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi" class="card-link" data-toggle="collapse" data-parent="#accordeon">
+                        En savoir plus
+                    </a>
+                    <a href="#item1" class="card-link" data-toggle="collapse" data-parent="#accordeon">
+                        Accepter
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <table class="headerTable">
     <tbody>
         <tr>
