@@ -1,52 +1,56 @@
-* { margin:0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 #volet_clos {
-	position: fixed;
-	top: 0;
-	/* auto-centreur horizontal */
-	--width0 : 22rem; /* demi-largeur */
-	left: calc(56vw - var(--width0));
-	right: calc(56vw - var(--width0));
+    position: fixed;
+    top: 0;
+    /* auto-centreur horizontal */
+    --width0: 22rem; /* demi-largeur */
+    left: calc(56vw - var(--width0));
+    right: calc(56vw - var(--width0));
 }
 
 #volet {
-	position: absolute;
-	bottom: 100%;
-	left: 0;
-	width: 100%;
-	padding: 0.5rem;
-	background: rgb(108,117,125);
-	color: white;
-	text-align: center;
-	-webkit-transition: transform .5s ease-in;
-	-moz-transition: transform .5s ease-in;
-    transition: transform .5s ease-in;
-    border:3px solid black;
-
-
-
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+    background: rgb(108, 117, 125);
+    color: white;
+    text-align: center;
+    -webkit-transition: transform 0.5s ease-in;
+    -moz-transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    border: 3px solid black;
 }
 
 #volet_clos .onglets {
-	--width1: 8rem; /* demi-largeur */
-	position: absolute;
-	top: 100%;
-	left: calc(56% - var(--width1));
-	right: calc(56% - var(--width1));
+    --width1: 8rem; /* demi-largeur */
+    position: absolute;
+    top: 100%;
+    left: calc(56% - var(--width1));
+    right: calc(56% - var(--width1));
 }
 
 .logWindow {
     margin: auto;
-    font-family: Roboto,sans-serif;
-
+    font-family: Roboto, sans-serif;
 }
 
-#volet_clos a.fermer { display: none; }
-
+#volet_clos a.fermer {
+    display: none;
+}
 
 /* ouverture */
-#volet:target { transform: translateY(100%); }
-#volet:target a[href="#volet"] { display: none; }
-#volet:target a[href="#volet_clos"] { display: initial; }
-
-
-
+#volet:target {
+    transform: translateY(100%);
+}
+#volet:target a[href="#volet"] {
+    display: none;
+}
+#volet:target a[href="#volet_clos"] {
+    display: initial;
+}
