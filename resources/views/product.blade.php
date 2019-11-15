@@ -1,23 +1,65 @@
-@extends('layouts.product', ['label', $label])
+<!DOCTYPE html>
 
-@section('main')
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  <head>
     @php
-        $article = App\Product::where('label', $label)->first();
+      $article = App\Product::where('id', $id)->first();
+      $label = $article->label;
     @endphp
+    @include('layouts/partials/_producthead', ['label', $label])
+  </head>
+  <body>
 
-<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-    <div class="col p-4 d-flex flex-column position-static">
-      <strong class="d-inline-block mb-2 text-primary">{{$article->price}}€</strong>
-      <h3 class="mb-0">{{$article->label}}</h3>
-      <div class="mb-1 text-muted">{{$article->created_at}}</div>
-    <p class="card-text mb-auto">{{$article->description}}</p>
-    <button type="submit" id="submitBut" class="btn btn-primary btn-block">Je l'achète</button>
+    <header>
+      @include('layouts/partials/_sidebar')
+      @include('layouts/partials/_navbar')
+    </header>
 
-    </div>
-    
-    <div class="col-auto d-none d-lg-block">
-    <img src="/img/boof.png" alt="{{$article->label}}">
-    </div>
+    <main>
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">{{$article->price}}€</strong>
+        <h3 class="mb-0">{{$article->label}}</h3>
+        <div class="mb-1 text-muted">{{$article->created_at}}</div>
+        <p class="card-text mb-auto">{{$article->description}}</p>
 
-  </div>
-@endsection
+        @guest 
+
+          @if (Route::has('register'))
+            <button onclick="location.href='../login';" type="submit" id="submitBut" class="btn btn-primary btn-block">Connecte toi pour ajouter l'article au panier</button>
+          @endif
+
+          {{-- connecté --}}
+
+          @else
+
+          @php
+            $id = \Auth::user()->id;
+            $product_id = $article->id;
+          @endphpgit add
+
+          <form method="POST" action="{{ 'addBasket' }}">
+          @csrf
+
+          <input type="text" name="amount" placeholder="combien d'article">
+          <button type="submit" id="submitBut" class="btn btn-primary btn-block">Ajouter au panier</button>
+          <input type="text" name="product_id" value = {{$product_id}} hidden>
+          {{-- </form> --}}
+
+        @endguest
+
+        </div>
+
+        <div class="col-auto d-none d-lg-block">
+        <img src="/img/boof.png" alt="{{$article->label}}">
+        </div>
+
+      </div>
+    </main>
+
+    <footer>
+      @include('layouts/partials/_footer')
+    </footer>
+  </body>
+</html>
+

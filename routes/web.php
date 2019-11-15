@@ -76,14 +76,38 @@ Route::get('shop/{label}', function ($label) {
     return view('product')->with('label', $label);
 });
 
-Route::get('event/{label}', function ($label) {
-    return view('article')->with('label', $label);
+Route::post('/shop/addBasket', function () {
+
+      $id = \Auth::user()->id;
+    App\Basket::create([
+      'amount' => request('amount'),
+      'user_id' => $id,
+      'product_id' => request('product_id')
+  ]);
+
+  return redirect('/shop');
+});
+
+Route::get('shop/{id}', function ($id) {
+    return view('product')->with('id', $id);
+});
+
+Route::get('event/{id}', function ($id) {
+    return view('article')->with('id', $id);
 });
 
 Auth::routes();
 
+// Route::get('panier', function ($user_id, $product_id) {
+//     return view('panier');
+// });
+
 Route::get('panier', function () {
     return view('panier');
+});
+
+Route::get('cgv', function () {
+    return view('cgv');
 });
 
 Route::get('app', function () {
