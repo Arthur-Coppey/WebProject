@@ -43,6 +43,7 @@
 						</div>
 						<div class="item-details">
 							<div class="description">{{$product->description}}</div>
+
 						</div>
 					</div>
 				</a>
