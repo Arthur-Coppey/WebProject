@@ -71,7 +71,11 @@ Route::get('event/{label}', function ($label) {
 
 Auth::routes();
 
-Route::get('panier', function ($user_id, $product_id) {
+// Route::get('panier', function ($user_id, $product_id) {
+//     return view('panier');
+// });
+
+Route::get('panier', function () {
     return view('panier');
 });
 

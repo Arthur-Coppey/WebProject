@@ -43,11 +43,8 @@
                         </a>
                     </td>
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> e1b0e6e6e3979297faa2d77b256ff9b329c03db5
                 @endguest
 
             </td>
