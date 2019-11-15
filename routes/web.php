@@ -64,6 +64,10 @@ Route::post('user', function () {
 });
 
 Route::get('shop/{label}', function ($label) {
+    return view('product')->with('label', $label);
+});
+
+Route::get('event/{label}', function ($label) {
     return view('article')->with('label', $label);
 });
 

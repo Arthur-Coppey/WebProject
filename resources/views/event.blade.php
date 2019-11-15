@@ -19,7 +19,7 @@
 				$label = $event->label;
 			@endphp
 
-			<a href="/shop/{{$label}}" aria-label="{{$label}}" class="gallery-item-card-container-event">
+			<a href="/event/{{$label}}" aria-label="{{$label}}" class="gallery-item-card-container-event">
 				<div class="gallery-item-card-event">
 
 					<div class="icon-cell-event">
