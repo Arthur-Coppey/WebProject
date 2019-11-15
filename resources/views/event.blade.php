@@ -25,15 +25,17 @@
 	<div class="cells_events">
 		<div class="gallery">
 			@php
-				$events = App\Event::all();
+				$events = App\Event::orderBy('date', 'asc')->get();
 			@endphp
 		
 			@foreach ($events as $event)
 			@php
 				$label = $event->label;
 				$id = $event->id;
+				$date = $event->date;
+				echo $date;
 			@endphp
-
+			@if (strtotime($date) >= strtotime(date('Y-m-d')))
 			<a href="../event/{{$id}}" aria-label="{{$label}}" class="gallery-item-card-container-event">
 				<div class="gallery-item-card-event">
 
@@ -71,6 +73,7 @@
 
 				</div>
 			</a>
+			@endif
 			@endforeach
 			
 			<!-- fin block -->
