@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        @include('layouts/partials/_articlehead', ['label', $label])
+        @include('layouts/partials/_producthead', ['label', $label])
     </head>
     <body>
         <header>

@@ -12,7 +12,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'label', 'description', 'price', 'center_id',
+        'label', 'description', 'price', 'center_id', 'category_id',
     ];
 
     public function center() {
@@ -37,8 +37,7 @@ class Product extends Model
             ->withPivot(['amount']);
     }
 
-    public function categories() {
-        return $this->belongsToMany('App\Category', 'product_categories')
-            ->using('App\ProductCategory');
+    public function category() {
+        return $this->belongsTo('App\Category');
     }
 }

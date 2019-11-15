@@ -6,7 +6,8 @@
     <body style = height :100%>
         <header>
             @include('layouts/partials/_sidebar')
-            @yield('navbar')
+            @include('layouts/partials/_navbar')
+            <br>
         </header>
 
         <main>

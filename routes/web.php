@@ -49,7 +49,25 @@ Route::get('basket', function () {
     return view('basket');
 });
 
+Route::post('user', function () {
+
+//     App\User::create([
+//       'first_name' => request('first_name'),
+//       'last_name' => request('last_name'),
+//       'email' => request('email'),
+//       'password' => request('password'),
+//       'center_id' => request('center'),
+//       'role_id' => '1'
+//   ]);
+
+//   return redirect('/');
+});
+
 Route::get('shop/{label}', function ($label) {
+    return view('product')->with('label', $label);
+});
+
+Route::get('event/{label}', function ($label) {
     return view('article')->with('label', $label);
 });
 

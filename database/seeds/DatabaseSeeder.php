@@ -1,5 +1,8 @@
 <?php
 
+use App\Category;
+use App\Event;
+use App\Product;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolesTableSeeder::class,
             CentersTableSeeder::class,
-            UsersTableSeeder::class,
+            CategoriesTableSeeder::class,
             ProductsTableSeeder::class,
-            EventsTableSeeder::class,
+            EventsTableSeeder::class
             ]);
     }
 }

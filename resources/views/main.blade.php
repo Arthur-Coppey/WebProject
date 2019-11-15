@@ -4,7 +4,7 @@
 @section('navbar')
 
      @include('layouts/partials/_navbar')
-     <br>
+     
 
 @endsection('navbar')
 

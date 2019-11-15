@@ -1,9 +1,9 @@
 <?php
 
-use App\ProductCategory;
+Use App\Category;
 use Illuminate\Database\Seeder;
 
-class ProductsCategoriesTableSeeder extends Seeder
+class CategoriesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

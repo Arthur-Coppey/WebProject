@@ -1,4 +1,4 @@
-@extends('layouts.article', ['label', $label])
+@extends('layouts.product', ['label', $label])
 
 @section('main')
     @php
