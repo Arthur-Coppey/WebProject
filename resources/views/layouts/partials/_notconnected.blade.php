@@ -8,10 +8,10 @@
         Malheureusement, il semblerait que vous ne soyez pas connectés !<br>
         Veuillez vous connecter ou vous inscrire à l'aide des liens ci dessous !
     </div>
-    <div class="redirectlinks">
-        <table>
+    <div>
+        <table class="redirectlinks">
             <tr>
-                <td>
+                <td class="redirectlinks">
                     <button type="button" class="headerRight btn btn-primary btn-sm" id="btnGauche">
                         <a href="/register" style="text-decoration: none">
                             <p class="loginRegisterText">Inscription</p>
