@@ -1,9 +1,9 @@
 const express = require('express'),
     router = express.Router(),
-    controller = require('../controllers/event.controller');
+    controller = require('../controllers/user.controller');
 
-/* GET events listing. */
-router.get('/', function (req, res, next) {
+/* GET users listing. */
+router.get('/', function(req, res, next) {
     controller.index().then(body => {
         res.json(body);
     });
