@@ -72,10 +72,6 @@ Route::post('create-event', function () {
 });
 
 
-Route::get('shop/{label}', function ($label) {
-    return view('product')->with('label', $label);
-});
-
 Route::post('/shop/addBasket', function () {
 
       $id = \Auth::user()->id;
@@ -87,6 +83,7 @@ Route::post('/shop/addBasket', function () {
 
   return redirect('/shop');
 });
+
 
 Route::get('shop/{id}', function ($id) {
     return view('product')->with('id', $id);

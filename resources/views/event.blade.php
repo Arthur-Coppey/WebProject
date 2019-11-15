@@ -33,7 +33,6 @@
 				$label = $event->label;
 				$id = $event->id;
 				$date = $event->date;
-				echo $date;
 			@endphp
 			@if (strtotime($date) >= strtotime(date('Y-m-d')))
 			<a href="../event/{{$id}}" aria-label="{{$label}}" class="gallery-item-card-container-event">
