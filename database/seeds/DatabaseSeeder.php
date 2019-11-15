@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,6 +16,7 @@ class DatabaseSeeder extends Seeder
             CentersTableSeeder::class,
             UsersTableSeeder::class,
             ProductsTableSeeder::class,
+            EventsTableSeeder::class,
             ]);
     }
 }

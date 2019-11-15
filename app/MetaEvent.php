@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Observers\MetaEventObserver;
 use Illuminate\Database\Eloquent\Model;
 
 class MetaEvent extends Model
@@ -26,5 +27,10 @@ class MetaEvent extends Model
     public function subscribers() {
         return $this->belongsToMany('App\User', 'subscribers')
             ->using('App\Subscriber');
+    }
+
+    public static function boot()
+    {
+        MetaEvent::observe(MetaEventObserver::class);
     }
 }

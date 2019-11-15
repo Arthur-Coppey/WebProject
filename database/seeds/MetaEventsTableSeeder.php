@@ -20,7 +20,7 @@ class MetaEventsTableSeeder extends Seeder
                 'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
                 'location' => 'salle '.rand(101, 109),
                 'start_date' => $faker->date($format = 'Y-m-d', $min = 'now'),
-                'occurrences' => rand(1, 10),
+                'ocurrences' => rand(1, 10),
                 'frequency' => 7,
                 'price' => 10.00,
                 'user_id' => rand(1, 10)
