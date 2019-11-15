@@ -113,7 +113,7 @@
 
 <div class="payer">
     <div class="payer-box">
-            <a class="payer-text" href="/payer" style="text-decoration: none; color: white;">
+            <a class="payer-text" href="/send-mail" style="text-decoration: none; color: white;">
                 PAYER
             </a>
     </div>
