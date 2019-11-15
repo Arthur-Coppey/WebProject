@@ -7,23 +7,9 @@
 @endsection('navbar')
 @section('main')
 
-@guest 
-@if (Route::has('register'))
-
-@endif
-
-@else
 <button type="button" class="btn btn-primary btn-sm" id="btnGauche">
 	<a href="/event_creater" style="text-decoration: none">
-		<p class="loginRegisterText">Ajouter un évènement</p>
-	</a>
-</button>
-
-@endguest
-
-<button type="button" class="btn btn-primary btn-sm" id="btnGauche">
-	<a href="event/past" style="text-decoration: none">
-		<p class="loginRegisterText">Voir les évènements passés</p>
+		<p class="loginRegisterText">Voir les évènements en cours</p>
 	</a>
 </button>
 
@@ -40,12 +26,12 @@
 				$id = $event->id;
 				$date = $event->date;
 			@endphp
-			@if (strtotime($date) >= strtotime(date('Y-m-d')))
+			@if (strtotime($date) < strtotime(date('Y-m-d')))
 			<a href="../event/{{$id}}" aria-label="{{$label}}" class="gallery-item-card-container-event">
 				<div class="gallery-item-card-event">
 
 					<div class="icon-cell-event">
-						<img class="icon" src="img/boof.png" alt="{{$label}}">
+						<img class="icon" src="/img/boof.png" alt="{{$label}}">
 					</div>
 
 					<div class="core-info-cell-event">
