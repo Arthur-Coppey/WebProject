@@ -1,6 +1,7 @@
 <?php
 
 use App\Category;
+use App\Product;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,10 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolesTableSeeder::class,
             CentersTableSeeder::class,
-            UsersTableSeeder::class,
-            ProductsTableSeeder::class,
             CategoriesTableSeeder::class,
-            ProductsCategoriesTableSeeder::class
+            ProductsTableSeeder::class
             ]);
     }
 }
