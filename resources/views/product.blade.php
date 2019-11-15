@@ -36,7 +36,7 @@
           @php
             $id = \Auth::user()->id;
             $product_id = $article->id;
-          @endphpgit add
+          @endphp
 
           <form method="POST" action="{{ 'addBasket' }}">
           @csrf

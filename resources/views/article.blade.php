@@ -9,7 +9,7 @@
     @include('layouts/partials/_producthead', ['label', $label])
   </head>
   <body>
-    
+
     <header>
       @include('layouts/partials/_sidebar')
       @include('layouts/partials/_navbar')
@@ -22,7 +22,30 @@
           <h3 class="mb-0">{{$article->label}}</h3>
           <div class="mb-1 text-muted">{{$article->created_at}}</div>
           <p class="card-text mb-auto">{{$article->description}}</p>
+          @guest 
+
+          @if (Route::has('register'))
+            <button onclick="location.href='../login';" type="submit" id="submitBut" class="btn btn-primary btn-block">Connecte toi pour t'incrire à l'évènement</button>
+          @endif
+
+          {{-- connecté --}}
+
+          @else
+
+          @php
+            $id = \Auth::user()->id;
+            $product_id = $article->id;
+          @endphp
+
+          <form method="POST" action="{{ 'addBasket' }}">
+          @csrf
+
           <button type="submit" id="submitBut" class="btn btn-primary btn-block">Je m'inscrit</button>
+          {{-- </form> --}}
+
+        @endguest
+
+          
         </div>
         <div class="col-auto d-none d-lg-block">
           <img src="/img/boof.png" alt="{{$article->label}}">
