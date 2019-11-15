@@ -36,28 +36,43 @@ Route::get('aPropos', function () {
     return view('aPropos');
 });
 
-Route::get('sign-in', function () {
-    return view('sign-in');
+Route::get('register', function () {
+    return view('auth/register');
 });
 
-Route::get('log-in', function () {
-    return view('log-in');
+Route::get('login', function () {
+    return view('auth/login');
 });
 
-Route::post('user', function () {
+// Route::post('user', function () {
 
-    App\User::create([
-      'first_name' => request('first_name'),
-      'last_name' => request('last_name'),
-      'email' => request('email'),
-      'password' => request('password'),
-      'center_id' => request('center'),
-      'role_id' => '1'
-  ]);
+//     App\User::create([
+//       'first_name' => request('first_name'),
+//       'last_name' => request('last_name'),
+//       'email' => request('email'),
+//       'password' => request('password'),
+//       'center_id' => request('center'),
+//       'role_id' => '1'
+//   ]);
 
-  return redirect('/');
-});
+//   return redirect('/');
+// });
 
 Route::get('shop/{label}', function ($label) {
     return view('article')->with('label', $label);
+});
+
+Auth::routes();
+
+
+
+Route::get('app', function () {
+    return view('layouts/app');
+});
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('profile', function () {
+    return view('profile');
 });
