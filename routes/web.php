@@ -89,6 +89,10 @@ Route::get('shop/{id}', function ($id) {
     return view('product')->with('id', $id);
 });
 
+Route::get('/event/past', function () {
+    return view('event_past')->with('id', 'Evènements Passés');
+});
+
 Route::get('event/{id}', function ($id) {
     return view('article')->with('id', $id);
 });

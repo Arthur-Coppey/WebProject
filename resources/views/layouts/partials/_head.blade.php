@@ -8,19 +8,19 @@
 <script src="js/signCondition.js"></script>
 
 <!-- CSS -->
-<link href="style/footer.css" rel="stylesheet">
-<link href="style/body.css" rel="stylesheet">
-<link href="style/navbar.css" rel="stylesheet">
-<link href="style/log.css" rel="stylesheet">
-<link href="style/flow_display.css" rel="stylesheet">
-<link href="style/flow_display_events.css" rel="stylesheet">
-<link href="style/mentionsLegales.css" rel="stylesheet">
-<link href="style/contact.css" rel="stylesheet">
-<link href="style/aPropos.css" rel="stylesheet">
-<link href="style/global.css" rel="stylesheet">
-<link href="style/panier.css" rel="stylesheet">
-<link href="style/notconnected.css" rel="stylesheet">
-<link href="style/cgv.css" rel="stylesheet">
+<link href="/style/footer.css" rel="stylesheet">
+<link href="/style/body.css" rel="stylesheet">
+<link href="/style/navbar.css" rel="stylesheet">
+<link href="/style/log.css" rel="stylesheet">
+<link href="/style/flow_display.css" rel="stylesheet">
+<link href="/style/flow_display_events.css" rel="stylesheet">
+<link href="/style/mentionsLegales.css" rel="stylesheet">
+<link href="/style/contact.css" rel="stylesheet">
+<link href="/style/aPropos.css" rel="stylesheet">
+<link href="/style/global.css" rel="stylesheet">
+<link href="/style/panier.css" rel="stylesheet">
+<link href="/style/notconnected.css" rel="stylesheet">
+<link href="/style/cgv.css" rel="stylesheet">
 
 <!-- W3 -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
