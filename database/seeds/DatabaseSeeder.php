@@ -1,6 +1,7 @@
 <?php
 
 use App\Category;
+use App\Event;
 use App\Product;
 use Illuminate\Database\Seeder;
 
@@ -17,7 +18,8 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             CentersTableSeeder::class,
             CategoriesTableSeeder::class,
-            ProductsTableSeeder::class
+            ProductsTableSeeder::class,
+            EventsTableSeeder::class
             ]);
     }
 }
