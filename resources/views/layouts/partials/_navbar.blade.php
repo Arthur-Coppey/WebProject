@@ -16,16 +16,19 @@
                 @guest 
                 @if (Route::has('register'))
                 <td>
-                        <button type="button" class="headerRight btn btn-primary btn-sm">
-                            <a href="/register" class="loginRegisterText" style = "text-decoration: none; color :white">Inscription</a>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="ouvrir headerRight btn btn-secondary btn-sm">
-                                {{-- <a href="#volet" class="loginRegisterText" style = "text-decoration: none; color :white">Connexion</a> --}}
-                                <a href="/login" class="loginRegisterText" style = "text-decoration: none; color :white">Connexion</a>
-                        </button>       
-                    </td>
+                    <button type="button" class="headerRight btn btn-primary btn-sm" id="btnGauche">
+                        <a href="/register" style="text-decoration: none">
+                            <p class="loginRegisterText">Inscription</p>
+                        </a>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="ouvrir headerRight btn btn-secondary btn-sm" id="btnDroit">
+                        <a href="/login" class="bouton-test" style="text-decoration: none">
+                            <p class="loginRegisterText">Connexion</p>
+                        </a>
+                    </button>       
+                </td>
                 @endif
                 {{-- connecter --}}
                 @else

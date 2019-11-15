@@ -44,27 +44,10 @@ Route::get('login', function () {
     return view('auth/login');
 });
 
-<<<<<<< HEAD
 // Route::post('user', function () {
-=======
 Route::get('basket', function () {
     return view('basket');
 });
-
-Route::post('user', function () {
->>>>>>> 110c585d0914480ada833d282eb7f19c23d82eb9
-
-//     App\User::create([
-//       'first_name' => request('first_name'),
-//       'last_name' => request('last_name'),
-//       'email' => request('email'),
-//       'password' => request('password'),
-//       'center_id' => request('center'),
-//       'role_id' => '1'
-//   ]);
-
-//   return redirect('/');
-// });
 
 Route::get('shop/{label}', function ($label) {
     return view('article')->with('label', $label);
@@ -72,7 +55,9 @@ Route::get('shop/{label}', function ($label) {
 
 Auth::routes();
 
-
+Route::get('panier', function () {
+    return view('panier');
+});
 
 Route::get('app', function () {
     return view('layouts/app');

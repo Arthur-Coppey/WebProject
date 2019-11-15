@@ -1,0 +1,33 @@
+/* Panier */
+
+.article-icon {
+    width: 8vw;
+}
+
+.article {
+    border: 1px solid black;
+}
+
+.icon-article-cell {
+    text-align: center;
+}
+
+.cate-photo {
+    text-align: center;
+}
+
+.list-articles {
+    margin: auto;
+}
+
+.totaux {
+    margin: auto;
+}
+
+.on-right {
+    text-align: right;
+}
+
+/* th {
+    border: 1px solid black;
+} */

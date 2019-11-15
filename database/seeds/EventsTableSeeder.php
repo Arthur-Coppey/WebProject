@@ -21,7 +21,6 @@ class EventsTableSeeder extends Seeder
                 'location' => 'salle '.rand(101, 109),
                 'date' => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'price' => '10.00',
-                'recurring' => rand(0, 1),
                 'meta_event_id' => rand(1, 10),
             ]);
         }
