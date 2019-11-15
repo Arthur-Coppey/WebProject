@@ -15,4 +15,10 @@ router.get('/:id', function (req, res, next) {
     });
 });
 
+router.post('/register', function (req, res, next) {
+    controller.register(req.body.email, req.body.password).then(body => {
+        res.json({token: body});
+    });
+});
+
 module.exports = router;

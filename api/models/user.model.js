@@ -1,5 +1,6 @@
 const sequelize = require('../common/sequelize').sequelize,
-    DataTypes = require('../common/sequelize').DataTypes;
+    DataTypes = require('../common/sequelize').DataTypes,
+    jwt = require('jsonwebtoken');
 
 const User = sequelize.define('users', {
     firstName: {
@@ -17,6 +18,14 @@ const User = sequelize.define('users', {
     emailVerifiedAt: {
         type: DataTypes.DATE,
         field: 'email_verified_at'
+    },
+    password: {
+        type: DataTypes.STRING,
+        field: 'password'
+    },
+    apiToken: {
+        type: DataTypes.STRING,
+        field: 'api_token'
     },
     roleId: {
         type: DataTypes.BIGINT,
@@ -43,15 +52,12 @@ const User = sequelize.define('users', {
     freezeTableName: true
 });
 
-/*User.methods = {};
+User.methods = {};
 
-User.methods.generateAuthToken = async function() {
+User.methods.generateAuthToken = async user => {
     // Generate an auth token for the user
-    const user = this;
-    const token = jwt.sign({_id: user._id}, process.env.JWT_KEY);
-    user.tokens = user.tokens.concat({token});
-    await user.save();
-    return token
+    console.log(this);
+    return jwt.sign({id: user.id}, process.env.JWT_KEY);
 };
 
 User.methods.findByCredentials = async (email, password) => {
@@ -60,7 +66,7 @@ User.methods.findByCredentials = async (email, password) => {
         where: {
             email: email
         }
-    }).then(async (user) => {
+    }).then(async user => {
         if (!user) {
             throw new Error({ error: 'Invalid login credentials' })
         }
@@ -71,6 +77,6 @@ User.methods.findByCredentials = async (email, password) => {
     });
 
     return user
-};*/
+};
 
 module.exports = User;
