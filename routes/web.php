@@ -49,19 +49,28 @@ Route::get('basket', function () {
     return view('basket');
 });
 
-Route::post('user', function () {
-
-//     App\User::create([
-//       'first_name' => request('first_name'),
-//       'last_name' => request('last_name'),
-//       'email' => request('email'),
-//       'password' => request('password'),
-//       'center_id' => request('center'),
-//       'role_id' => '1'
-//   ]);
-
-//   return redirect('/');
+Route::get('event_creater', function () {
+    return view('event_creater');
 });
+
+Route::post('create-event', function () {
+    $ocurrences = request('ocurrences');
+    $date = request('date');
+    $frequency = request('frequency');
+    for ($i=0; $i < $ocurrences; $i++) { 
+        App\Event::create([
+            'label' => request('label'),
+            'location' => request('location'),
+            'date' => $date,
+            'price' => request('price'),
+            'description' => request('description'),
+            'meta_event_id' => '1'
+        ]); 
+        $date = date('Y-m-d', strtotime($date. ' + '.$frequency.' days'));
+    }
+   return redirect('/event');
+});
+
 
 Route::get('shop/{label}', function ($label) {
     return view('product')->with('label', $label);
