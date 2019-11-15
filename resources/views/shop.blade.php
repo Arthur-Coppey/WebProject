@@ -21,8 +21,10 @@
 				@foreach ($products as $product)
 				@php
 					$label = $product->label;
+					$id = $product->id;
 				@endphp
-			<a href="/shop/{{$label}}" aria-label="nom produit" class="gallery-item-card-container">
+
+				<a href="../shop/{{$product->id}}" aria-label="nom produit" class="gallery-item-card-container">
 					<div class="gallery-item-card">
 						<div class="cover">
 							<div class="icon-cell">

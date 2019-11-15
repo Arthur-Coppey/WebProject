@@ -49,6 +49,29 @@ Route::get('basket', function () {
     return view('basket');
 });
 
+Route::get('event_creater', function () {
+    return view('event_creater');
+});
+
+Route::post('create-event', function () {
+    $ocurrences = request('ocurrences');
+    $date = request('date');
+    $frequency = request('frequency');
+    for ($i=0; $i < $ocurrences; $i++) { 
+        App\Event::create([
+            'label' => request('label'),
+            'location' => request('location'),
+            'date' => $date,
+            'price' => request('price'),
+            'description' => request('description'),
+            'meta_event_id' => '1'
+        ]); 
+        $date = date('Y-m-d', strtotime($date. ' + '.$frequency.' days'));
+    }
+   return redirect('/event');
+});
+
+
 Route::post('/shop/addBasket', function () {
 
       $id = \Auth::user()->id;
@@ -61,12 +84,13 @@ Route::post('/shop/addBasket', function () {
   return redirect('/shop');
 });
 
-Route::get('shop/{label}', function ($label) {
-    return view('product')->with('label', $label);
+
+Route::get('shop/{id}', function ($id) {
+    return view('product')->with('id', $id);
 });
 
-Route::get('event/{label}', function ($label) {
-    return view('article')->with('label', $label);
+Route::get('event/{id}', function ($id) {
+    return view('article')->with('id', $id);
 });
 
 Auth::routes();
@@ -79,6 +103,10 @@ Route::get('panier', function () {
     return view('panier');
 });
 
+Route::get('cgv', function () {
+    return view('cgv');
+});
+
 Route::get('app', function () {
     return view('layouts/app');
 });
@@ -89,5 +117,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('profile', function () {
     return view('profile');
 });
-
-

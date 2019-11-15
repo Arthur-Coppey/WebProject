@@ -2,22 +2,27 @@
     <table class="footer-text">
         <tbody>
             <tr>
-                <td width="25%">
+                <td width="20%">
                     <a class="item-text-footer" href="/mentionsLegales" style="text-decoration: none; font-size: 2vw;">
                         Mentions Légales
                     </a>
                 </td>
-                <td width="25%">
+                <td width="20%">
+                        <a class="item-text-footer" href="/cgv" style="text-decoration: none; font-size: 2vw;">
+                            CGV
+                        </a>
+                    </td>
+                <td width="20%">
                     <a class="item-text-footer" href="/aPropos" style="text-decoration: none; font-size: 2vw;">
                         À Propos Du BDE
                     </a>
                 </td>
-                <td width="25%">
+                <td width="20%">
                     <a class="item-text-footer" href="/contact" style="text-decoration: none; font-size: 2vw;">
                         Contact
                     </a>
                 </td>
-                <td width="25%">
+                <td width="20%">
                     <a class="item-text-footer" href="/boiteIdees" style="text-decoration: none; font-size: 2vw;">
                         Boîte à Idées
                     </a>
