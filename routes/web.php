@@ -61,12 +61,12 @@ Route::post('/shop/addBasket', function () {
   return redirect('/shop');
 });
 
-Route::get('shop/{label}', function ($label) {
-    return view('product')->with('label', $label);
+Route::get('shop/{id}', function ($id) {
+    return view('product')->with('id', $id);
 });
 
-Route::get('event/{label}', function ($label) {
-    return view('article')->with('label', $label);
+Route::get('event/{id}', function ($id) {
+    return view('article')->with('id', $id);
 });
 
 Auth::routes();

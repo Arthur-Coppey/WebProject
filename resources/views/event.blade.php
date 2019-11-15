@@ -17,9 +17,10 @@
 			@foreach ($events as $event)
 			@php
 				$label = $event->label;
+				$id = $event->id;
 			@endphp
 
-			<a href="/event/{{$label}}" aria-label="{{$label}}" class="gallery-item-card-container-event">
+			<a href="../event/{{$id}}" aria-label="{{$label}}" class="gallery-item-card-container-event">
 				<div class="gallery-item-card-event">
 
 					<div class="icon-cell-event">
