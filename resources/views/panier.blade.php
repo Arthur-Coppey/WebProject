@@ -17,66 +17,60 @@
 @else
 
 <table class="list-articles" width="60%">
-    <thead class="categories-panier">
-        <th scope="col" class="txt-cate cate-photo">Photo</th>
-        <th scope="col" class="txt-cate on-right">Nom</th>
-        <th scope="col" class="txt-cate on-right">Prix Unitaire</th>
-        <th scope="col" class="txt-cate on-right">Nombre d'articles</th>
-        <th scope="col" class="txt-cate on-right">Prix total</th>
-    </thead>
-    <tbody>
-        <tr class="article">
-            <td class="icon-article-cell">
-                <img class="article-icon" src="img/boof.png">
-            </td>
-            <td class="nom-article on-right">
-                <a class="text-articles-panier text-nom">P A S S</a>
-            </td>
-            <td class="prix-unitaire on-right">
-                <a class="text-articles-panier val-prix-unit">10 €</a>
-            </td>
-            <td class="quantite-article on-right">
-                <a class="text-articles-panier val-qtt">2 pièces</a>
-            </td>
-            <td class="prix-total-article on-right">
-                <a class="text-articles-panier prix-tot">20 €</a>
-            </td>
-        </tr>
-        <tr class="article">
-            <td class="icon-article-cell">
-                <img class="article-icon" src="img/boof2.png">
-            </td>
-            <td class="nom-article on-right">
-                <a class="text-articles-panier text-nom">T H E</a>
-            </td>
-            <td class="prix-unitaire on-right">
-                <a class="text-articles-panier val-prix-unit">20 €</a>
-            </td>
-            <td class="quantite-article on-right">
-                <a class="text-articles-panier val-qtt">2 pièces</a>
-            </td>
-            <td class="prix-total-article on-right">
-                <a class="text-articles-panier prix-tot">40 €</a>
-            </td>
-        </tr>
-        <tr class="article">
-            <td class="icon-article-cell">
-                <img class="article-icon" src="img/boof3.png">
-            </td>
-            <td class="nom-article on-right">
-                <a class="text-articles-panier text-nom">B O O F</a>
-            </td>
-            <td class="prix-unitaire on-right">
-                <a class="text-articles-panier val-prix-unit">30 €</a>
-            </td>
-            <td class="quantite-article on-right">
-                <a class="text-articles-panier val-qtt">2 pièces</a>
-            </td>
-            <td class="prix-total-article on-right">
-                <a class="text-articles-panier prix-tot">60 €</a>
-            </td>
-        </tr>
-    </tbody>
+    @php
+        $currentID = \Auth::user()->id;  
+        $nbrFor = (App\Basket::where('user_id', $currentID)->get());
+        
+    @endphp
+
+    @foreach($nbrFor as $k=>$value)
+        <thead class="categories-panier">
+            <th scope="col" class="txt-cate cate-photo">Photo</th>
+            <th scope="col" class="txt-cate on-right">Nom</th>
+            <th scope="col" class="txt-cate on-right">Prix Unitaire</th>
+            <th scope="col" class="txt-cate on-right">Nombre d'articles</th>
+            <th scope="col" class="txt-cate on-right">Prix total</th>
+        </thead>
+        <tbody>
+            <tr class="article">
+                <td class="icon-article-cell">
+                    <img class="article-icon" src="img/boof.png">
+                </td>
+                <td class="nom-article on-right">
+                    <a class="text-articles-panier text-nom">
+                        @php    
+                            $currentID = \Auth::user()->id;  
+                            $product_id = $value->product_id;
+                            $product_name = (App\Product::where('id', $product_id)->first()->label);
+                            echo $product_name;
+                        @endphp
+
+                    </a>
+                </td>
+                <td class="prix-unitaire on-right">
+                    @php
+                        $product_price = (App\Product::where('id', $product_id)->first())->price;
+                        echo ($product_price.'€');
+                    @endphp
+                </td>
+                <td class="quantite-article on-right">
+                    @php
+                        $product_amount = $value->amount;
+                        echo $product_amount;
+                        $totalArticle[$k] = $product_amount;                 
+                    @endphp
+                </td>
+                <td class="prix-total-article on-right">
+                    @php
+                        $totalProduct = $product_amount*$product_price; 
+                        echo ($totalProduct);
+                        $totalToPay[$k] = $totalProduct;
+                    @endphp
+                </td>
+            </tr>
+    
+        </tbody>
+    @endforeach
 </table>
 
 <table class="totaux" width="60%">
@@ -88,10 +82,30 @@
                 <a class="text-articles-panier text-total">TOTAL :</a>
             </td>
             <td class="txt-totaux total-article on-right" width="9%">
-                <a class="text-articles-panier nb-total-article">6 pièces</a>
+                <a class="text-articles-panier nb-total-article">
+                    @php
+                        $addTotalProduct = 0;
+                        for($i=0;$i< count($nbrFor);$i++){
+                            $addTotalProduct = $addTotalProduct + $totalArticle[$i];
+                        }
+                        echo $addTotalProduct;
+
+                    @endphp
+                </a>
             </td>
             <td class="txt-totaux total-article on-right" width="16%">
-                <a class="text-articles-panier prix-total-panier">120 €</a>
+
+                <a class="text-articles-panier prix-total-panier">                   
+                    @php
+                        $addPay = 0;
+                        for($i=0;$i< count($nbrFor);$i++){
+                            $addPay = $addPay + $totalToPay[$i];
+                        }
+                        echo $addPay.'€';
+                            
+                    @endphp
+                </a>
+
             </td>
         </tr>
     </tbody>
