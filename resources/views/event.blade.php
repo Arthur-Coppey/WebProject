@@ -7,6 +7,19 @@
 @endsection('navbar')
 @section('main')
 
+@guest 
+@if (Route::has('register'))
+
+@endif
+
+@else
+<button type="button" class="headerRight btn btn-primary btn-sm" id="btnGauche">
+	<a href="/event_creater" style="text-decoration: none">
+		<p class="loginRegisterText">Ajouter un évènement</p>
+	</a>
+</button>
+
+@endguest
 
 <div class="marketplace-extensions-top">
 	<div class="cells_events">
@@ -14,6 +27,7 @@
 			@php
 				$events = App\Event::all();
 			@endphp
+		
 			@foreach ($events as $event)
 			@php
 				$label = $event->label;
