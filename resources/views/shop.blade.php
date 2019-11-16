@@ -52,8 +52,49 @@
 					</div>
 				</a>
 				@endforeach
-				
-				
+				<form method="POST" action="{{ 'suppProduct' }}">
+						@csrf
+						<div class="payer">
+							<div class="payer-box">
+								<div>
+									<input type="text" name="nameProductSupp" placeholder="Nom du produit à supprimer" >
+								</div>
+								<button>
+									<a class="payer-text" style="text-decoration: none; color: white;">
+										Supprimer un produit
+									</a>
+								</button>
+								</div>
+							</div>
+						</div>
+				</form>
+				<br>
+				<form method="POST" action="{{ 'addProduct' }}">
+						@csrf
+						<div class="payer">
+							<div class="payer-box">
+								<div>
+									<input type="text" name="labelProductAdd" placeholder="Nom du produit à ajouter" >
+								</div>
+									<input type="text" name="descriptionProductAdd" placeholder="Description du produit à ajouter" >
+								<div>
+								</div>
+									<input type="text" name="priceProductAdd" placeholder="Prix du produit à ajouter" >
+								<div>
+								</div>
+									<input type="text" name="centerProductAdd" placeholder="Id_Centre du produit à ajouter" >
+								<div>
+								</div>
+
+								<button>
+									<a class="payer-text" style="text-decoration: none; color: white;">
+										Ajouter un produit
+									</a>
+								</button>
+								</div>
+							</div>
+						</div>
+				</form>
 				<!-- fin block -->
 			</div>
 			<!-- clearfix sert à mettre à la suite les prochains élément sans qu'ils glisse dessous !-->

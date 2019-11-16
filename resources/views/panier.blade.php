@@ -36,11 +36,13 @@
 
     @foreach($nbrFor as $k=>$value)
             @php
+                    
                 // $amount = (App\Basket::where('user_id', $currentID)->get('amount'));
                 // $product_id = (App\Basket::where('user_id', $currentID)->first('product_id'));
                 // $order_id = (App\Order::where('user_id', $currentID)->get('id'));
                 // $order_idTab = $order_id[$i];
                 // echo $order_idTab['id'];
+                echo count($nbrFor);
             @endphp
 
         <tbody>
