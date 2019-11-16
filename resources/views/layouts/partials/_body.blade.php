@@ -31,6 +31,13 @@
         </table>
     </div>
 
+    @php
+        $orderContent = (App\OrderContent::all('product_id'));
+        echo $orderContent;
+    @endphp
+
+ 
+    
     <div class="shopPreview">
 
         <h2 class="bodyTitle" style="font-size: 2vw;">Articles</h2>
@@ -41,7 +48,7 @@
             <tbody>
                 <tr>
                     <td align="center">
-                        <img class="imgArticles" id="mostRecentArticle" src="img/image.png">
+                        <img class="imgArticles" id="mostRecentArticle" src="img/shop/1.jpg">
                         <p class="articleType" style="font-size: 1vw;">Le plus récemment ajouté</p>
                     </td>
                     <td align="center">

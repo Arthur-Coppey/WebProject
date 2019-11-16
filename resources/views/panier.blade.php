@@ -31,6 +31,14 @@
             <th scope="col" class="txt-cate on-right">Nombre d'articles</th>
             <th scope="col" class="txt-cate on-right">Prix total</th>
         </thead>
+            @php
+                // $amount = (App\Basket::where('user_id', $currentID)->get('amount'));
+                // $product_id = (App\Basket::where('user_id', $currentID)->first('product_id'));
+                // $order_id = (App\Order::where('user_id', $currentID)->get('id'));
+                // $order_idTab = $order_id[$i];
+                // echo $order_idTab['id'];
+            @endphp
+
         <tbody>
             <tr class="article">
                 <td class="icon-article-cell">
