@@ -10,22 +10,46 @@
 @guest 
 @if (Route::has('register'))
 
-   
+    @include('layouts/partials/_notconnected')
 
 @endif
 {{-- connecter --}}
 @else
 
-     <h1>Votre commande a bien été prise en compte !</h1><br>
-     {{-- DELETE LES ARTICLES --}}
-     
-     
-     @php
-          
+    <h1>Votre commande à bien était passé</h1>
+
+
+    {{-- @php
+        $i=0;
+        
+        $currentID = \Auth::user()->id;
+        $nbrFor = (App\Basket::where('user_id', $currentID)->get());
+        $addPay = 0;
+
+        for($i=0;$i< count($nbrFor);$i++){
+            $addPay = $addPay + $totalToPay[$i];
+        }
 
 
 
-     @endphp
+
+        while($i<count($nbrFor)){
+            $i++;
+            App\Order::create([
+            'date' => date('Y-m-d H:i:s'),
+            'price' => '30',
+            'user_id' => $currentID,
+            
+            
+        ]);
+        }
+
+
+
+    @endphp --}}
+
+
+
 @endguest
 
 

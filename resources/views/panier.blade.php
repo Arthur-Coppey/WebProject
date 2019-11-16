@@ -102,7 +102,7 @@
                             $addPay = $addPay + $totalToPay[$i];
                         }
                         echo $addPay.'€';
-                            
+                        
                     @endphp
                 </a>
 
@@ -111,13 +111,28 @@
     </tbody>
 </table>
 
-<div class="payer">
-    <div class="payer-box">
-            <a class="payer-text" href="/send-mail" style="text-decoration: none; color: white;">
-                PAYER
-            </a>
+<form method="POST" action="{{ 'addOrder' }}">
+    @csrf
+    <div class="payer">
+        <div class="payer-box">
+            <input type="text" name="price" value = {{$addPay}} hidden>
+
+            <button type="submit" id="submitBut">
+                <a class="payer-text" style="text-decoration: none; color: white;">
+                    PAYER
+                </a>
+            </button>
+        </div>
     </div>
-</div>
+</form>
+    {{-- <input type="text" name="product_id" value = {{$product_id}} hidden> --}}
+    
+    
+              {{-- <input type="text" name="amount" placeholder="combien d'article"> --}}
+              {{-- <button type="submit" id="submitBut" class="btn btn-primary btn-block">Ajouter au panier</button> --}}
+              {{-- <input type="text" name="product_id" value = {{$product_id}} hidden> --}}
+              
+
 
 @endguest
 

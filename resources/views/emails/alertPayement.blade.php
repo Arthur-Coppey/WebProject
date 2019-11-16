@@ -6,6 +6,10 @@
 <body>
     {{-- <h1>{{ $details['title'] }}</h1>
     <p>{{ $details['body'] }}</p> --}}
-    <p>un utilisateur a passé une commande</p>
+    <p>Un utilisateur a passé une commande !</p>
+    @php
+        
+    @endphp
+
 </body>
 </html>

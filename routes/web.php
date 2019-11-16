@@ -128,3 +128,29 @@ Route::get('successPay', function () {
 
 Route::get('send-mail', 'SendMail@mailsend');
 //SendMail = controller
+
+Route::post('/addOrder', function () {
+
+    $currentId = \Auth::user()->id;
+    $nbrFor = (App\Basket::where('user_id', $currentId)->get());
+
+    App\Order::create([
+    'date' => date('Y-m-d H:i:s'),
+    'price' => request('price'),
+    'user_id' =>  $currentId,
+    ]);
+
+    
+    for($i=0;count($nbrFor);$i++){
+        $amount = App\Basket::where('user_id', $currentId)->first()->amount;
+        $product_id= App\Basket::where('user_id', $currentId)->first()->product_id;
+        $order_id = App\Order::where('user_id',  $currentId)->orderBy('date', 'DESC')->first()->id;
+            App\OrderContent::create([
+                'amount'=>$amount,
+                'product_id'=>$product_id,
+                'order_id'=>$order_id,
+            ]);
+        }   
+
+return redirect('/send-mail');
+});
