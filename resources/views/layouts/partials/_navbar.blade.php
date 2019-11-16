@@ -1,16 +1,36 @@
-<div id="accordeon">
+<script>
+    //document.cookie = "acceptcookies=false";
+
+    window.onload = function () {
+        var cookieValue = getCookie("acceptcookies");
+        if(cookieValue == "true") {
+            document.getElementById("accordeon").style.display = 'none';
+        } else {
+            document.getElementById("accordeon").style.display = 'block';
+        }
+    }
+</script>
+
+<div id="accordeon" style="display: none;">
     <div class="card">
         <div class="collapse show" id="item1">
             <div class="card-body">
-                    <p class="card-text">
-                        En poursuivant la navigation sur ce site, vous acceptez l'utilisation de Cookies pour vous proposer un contenu personnalisés et adaptés à vos centres d'intérêts
-                    </p>
-                    <a href="https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loihttps://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi" class="card-link" data-toggle="collapse" data-parent="#accordeon">
+                <p class="card-text">
+                    En poursuivant la navigation sur ce site, vous acceptez l'utilisation de Cookies pour vous proposer un contenu personnalisés et adaptés à vos centres d'intérêts
+                </p>
+                <button class="boutons-cookies" class="card-link" data-toggle="collapse" data-parent="#accordeon">
+                    <a class="liens-boutons" style="text-decoration: none;" href="https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loihttps://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi">
                         En savoir plus
                     </a>
-                    <a href="#item1" class="card-link" data-toggle="collapse" data-parent="#accordeon">
-                        Accepter
+                </button>
+                <button class="boutons-cookies" class="card-link" data-toggle="collapse" data-parent="#accordeon">
+                    <a class="liens-boutons" style="text-decoration: none;" href="https://www.google.fr/">
+                        Décliner
                     </a>
+                </button>
+                <button class="boutons-cookies" onclick="acceptCookies()" href="#item1" class="card-link" data-toggle="collapse" data-parent="#accordeon">
+                    Accepter
+                </button>
             </div>
         </div>
     </div>
