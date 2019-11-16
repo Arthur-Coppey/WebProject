@@ -33,10 +33,14 @@
 
           @else
           
+          
           @php
               $user_id = \Auth::user()->id;
               $event_id=App\Event::where('id', $id)->first()->id;
           @endphp    
+
+          <button onclick="location.href='/downloadParticipantList';" class="btn btn-primary btn-block" name="event_id" value = {{$event_id}}>Télécharger la liste des participants</button>
+
           @if ( App\Participant::where('event_id', $event_id)->first() == null)
             <form method="POST" action="{{ 'eventSub' }}">
             @csrf
@@ -48,6 +52,10 @@
             <input type="text" name="event_id" value = {{$event_id}} hidden>
             <button type="submit" id="submitBut" class="btn btn-primary btn-block">Je me désinscris</button>
           @endif
+
+          <button onclick="location.href='/downloadParticipantList';" class="btn btn-primary btn-block" name="event_id" value = {{$event_id}}>Télécharger la liste des participants</button>
+
+
         @endguest
 
           
