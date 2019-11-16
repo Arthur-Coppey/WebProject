@@ -101,6 +101,31 @@ Route::post('/event/eventUnsub', function () {
     return redirect('/event');
 });
 
+Route::get('/downloadParticipantList', function (){
+    $id = \Auth::user()->id;
+    $participants = App\Participant::all()->where('event_id', request('event_id'));
+    $filename = "participant.csv";
+    foreach ($participants as $participant){
+        $handle = fopen($filename, 'w+');
+        $user_id = $participant->user_id;
+        $first_name = App\User::where('id', $user_id)->first()->first_name;
+        $last_name = App\User::where('id', $user_id)->first()->last_name;
+        $participant_user = array($first_name, $last_name);
+        fputcsv($handle,  [
+            $first_name,
+            $last_name
+        ]);
+        fclose($handle);
+    }
+
+
+    $headers = array(
+        'Content-Type' => 'text/csv',
+    );
+    return Response::download($filename, 'participantList.csv', $headers);
+   // return redirect('/event');
+});
+
 Route::get('shop/{id}', function ($id) {
     return view('product')->with('id', $id);
 });
