@@ -84,6 +84,22 @@ Route::post('/shop/addBasket', function () {
   return redirect('/shop');
 });
 
+Route::post('/event/eventSub', function () {
+
+    $id = \Auth::user()->id;
+  App\Participant::create([
+    'user_id' => $id,
+    'event_id' => request('event_id')
+]);
+return redirect('/event');
+  });
+
+Route::post('/event/eventUnsub', function () {
+
+    $id = \Auth::user()->id;
+    $participant = App\Participant::where('user_id', $id)->where('event_id', request('event_id'))->delete();
+    return redirect('/event');
+});
 
 Route::get('shop/{id}', function ($id) {
     return view('product')->with('id', $id);
@@ -120,4 +136,47 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('profile', function () {
     return view('profile');
+});
+
+Route::get('successPay', function () {
+    return view('successPay');
+});
+
+Route::get('send-mail', 'SendMail@mailsend');
+//SendMail = controller
+
+Route::post('/addOrder', function () {
+
+    $currentId = \Auth::user()->id;
+    $nbrFor = (App\Basket::where('user_id', $currentId)->get());
+
+    App\Order::create([
+    'date' => date('Y-m-d H:i:s'),
+    'price' => request('price'),
+    'user_id' =>  $currentId,
+    ]);
+
+
+    for($i=0;$i<count($nbrFor);$i++){
+
+        $amount = (App\Basket::where('user_id', $currentId)->get('amount'));        
+        $amountTab = $amount[$i];
+        $product_id = (App\Basket::where('user_id', $currentId)->get('product_id'));
+        $product_idTab = $product_id[$i];
+        $order_id = (App\Order::where('user_id', $currentId)->get('id'));
+        $order_idTab = $order_id[$i];
+
+            App\OrderContent::create([
+                'amount'=>$amountTab['amount'],
+                'product_id'=>$product_idTab['product_id'],
+                'order_id'=> $order_idTab['id'],
+            ]);
+    }  
+
+    App\Basket::where('user_id', $currentId)->delete();
+    
+
+
+    return redirect('/send-mail');
+
 });

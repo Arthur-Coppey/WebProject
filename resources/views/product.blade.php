@@ -44,7 +44,7 @@
           <input type="text" name="amount" placeholder="combien d'article">
           <button type="submit" id="submitBut" class="btn btn-primary btn-block">Ajouter au panier</button>
           <input type="text" name="product_id" value = {{$product_id}} hidden>
-          {{-- </form> --}}
+          </form>
 
         @endguest
 

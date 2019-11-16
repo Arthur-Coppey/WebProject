@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Mail\alertPayement;
 
 class RegisterController extends Controller
 {
@@ -72,5 +73,11 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        \Mail::to("bdeAccount@bdebordeaux")->send(new alertPayement);
+
     }
+
+
+
 }

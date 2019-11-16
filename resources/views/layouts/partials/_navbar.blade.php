@@ -11,7 +11,7 @@
     }
 </script>
 
-<div id="accordeon" style="display: none;">
+<div id="accordeon">
     <div class="card">
         <div class="collapse show" id="item1">
             <div class="card-body">
@@ -90,26 +90,3 @@
         </tr>
     </tbody>
 </table>
-
-
-
-
-<div id="volet_clos">
-	<div id="volet">
-            <table class="logWindow">
-                <tbody>
-                    <tr>
-                        <td>Pseudo</td>
-                        <td>Mot de passe</td>
-                    </tr>
-                    <tr>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                </tbody>
-            </table>
-		<div class="onglets">
-			<a href="#volet_clos" class="fermer" aria-hidden="true"><button type="button" class="btn btn-secondary">Fermer</button></a>
-		</div>
-	</div>
-</div>

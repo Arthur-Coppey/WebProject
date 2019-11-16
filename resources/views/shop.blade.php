@@ -16,12 +16,12 @@
 				<!-- début block -->
 				<!-- aria-label pour une future bar de recherche -->
 				@php
-					$products = App\Product::all();
+					$products = App\Product::all()->sortByDesc('created_at');
+					
 				@endphp
 				@foreach ($products as $product)
 				@php
 					$label = $product->label;
-					$id = $product->id;
 				@endphp
 
 				<a href="../shop/{{$product->id}}" aria-label="nom produit" class="gallery-item-card-container">
@@ -37,7 +37,9 @@
 								<div class="core-info-second-row">
 									<div class="price">
 										<span>{{$product->price}}€</span>
+										
 									</div>
+									
 								</div>
 							</div>
 						</div>
