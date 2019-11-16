@@ -239,3 +239,9 @@ Route::post('/addIdeas', function () {
 
 return redirect('/boiteIdees');
 });
+
+Route::post('/suppIdeas', function () {
+    App\Idea::where('title' , request('titleIdeaAdd'))->delete();
+
+return redirect('/boiteIdees');
+});
