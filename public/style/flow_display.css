@@ -96,7 +96,6 @@
     padding: 0 10px;
 }
 
-<<<<<<< HEAD
 .extensions .gallery-item-card .item-details .description {
     overflow: hidden;
     color: #767676;
@@ -107,9 +106,7 @@
     text-overflow: ellipsis;
     max-height: 40px;
 }
-=======
 
 .buttonClass {
-    float:left;
+    float: left;
 }
->>>>>>> e1b0e6e6e3979297faa2d77b256ff9b329c03db5
