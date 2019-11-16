@@ -22,6 +22,7 @@
 <link href="/style/notconnected.css" rel="stylesheet">
 <link href="/style/cgv.css" rel="stylesheet">
 <link href="/style/popupcookies.css" rel="stylesheet">
+<link href="/style/profil.css" rel="stylesheet">
 
 <!-- W3 -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">

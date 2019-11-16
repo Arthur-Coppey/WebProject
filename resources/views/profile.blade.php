@@ -16,12 +16,17 @@
 
 @endif
 @else
+<div class="profil-title-div">
+    <h1 class="titre-profil">Profil</h1>
+</div>
 
-    <a class="dropdown-item" href="{{ route('logout') }}"
+<div class="log-out-div">
+    <a class="dropdown-item log-out-text" href="{{ route('logout') }}"
         onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">
         {{ __('Logout') }}
     </a>
+</div>
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf

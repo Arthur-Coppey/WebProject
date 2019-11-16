@@ -1,0 +1,21 @@
+/* Profil de l'utilisateur + bouton dééconnexion */
+
+.profil-title-div {
+    width: 50%;
+    margin: auto;
+}
+
+.titre-profil {
+    font-size: 3vw;
+    text-align: left;
+}
+
+.log-out-text {
+    font-size: 1.5vw;
+}
+
+.log-out-div {
+    width: fit-content;
+    border: 1px solid #5c88da;
+    border-radius: 20px;
+}
