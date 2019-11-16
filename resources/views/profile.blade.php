@@ -22,16 +22,17 @@
 </div>
 
 <div class="profil-title-div">
-    <h2 class="titre-infos-profil">Prénom : </h2>
+    <h2 class="titre-infos-profil">Prénom : <?php echo App\User::where('id' , \Auth::user()->id)->first()->first_name; ?> </h2>
+    
 </div>
 <div class="profil-title-div">
-    <h2 class="titre-infos-profil">Nom : </h2>
+    <h2 class="titre-infos-profil">Nom : <?php echo App\User::where('id' , \Auth::user()->id)->first()->last_name; ?></h2>
 </div>
 <div class="profil-title-div">
-    <h2 class="titre-infos-profil">Adresse Mail : </h2>
+    <h2 class="titre-infos-profil">Adresse Mail : <?php echo App\User::where('id' , \Auth::user()->id)->first()->email; ?></h2>
 </div>
 <div class="profil-title-div">
-    <h2 class="titre-infos-profil">Centre : </h2>
+    <h2 class="titre-infos-profil">Centre : <?php echo App\Center::where('id', App\User::where('id' , \Auth::user()->id)->first()->center_id)->first()->name; ?></h2>
 </div>
 
 <div class="log-out-div">
@@ -39,7 +40,7 @@
         style="text-decoration: none; color: white;"
         onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">
-        {{ __('Logout') }}
+        {{ __('Se déconnecter') }}
     </a>
 </div>
 
