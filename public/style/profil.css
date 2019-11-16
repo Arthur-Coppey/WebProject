@@ -1,0 +1,42 @@
+/* Profil de l'utilisateur + bouton dééconnexion */
+
+.profil-title-div {
+    width: 50%;
+    margin: auto;
+}
+
+.titre-profil {
+    font-size: 3vw;
+    text-align: center;
+    font-family: sans-serif;
+    margin-bottom: 2vw;
+}
+
+.profil-infos-div {
+    border: 1px solid rgb(rgb(119, 117, 117));
+}
+
+.titre-infos-profil {
+    font-size: 1.5vw;
+    font-family: sans-serif;
+}
+
+.log-out-text {
+    font-size: 1.5vw;
+    margin: 1vw;
+    font-family: sans-serif;
+}
+
+.log-out-div {
+    width: fit-content;
+    border-radius: 20px;
+    background-color: #5c88da;
+    margin-bottom: 1vw;
+    margin-top: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.log-out-div:hover {
+    background-color: rgb(255, 194, 82);
+}
