@@ -52,6 +52,16 @@
 					</div>
 				</a>
 				@endforeach
+
+				@guest 
+				@if (Route::has('register'))
+
+				@endif
+
+				@else
+
+				{{-- if admin --}}
+				@if ((App\User::where('id', (\Auth::user()->id))->first()->role_id)==2)
 				<form method="POST" action="{{ 'suppProduct' }}">
 						@csrf
 						<div class="payer">
@@ -95,6 +105,12 @@
 							</div>
 						</div>
 				</form>
+					
+				@endif
+
+
+				@endguest
+				
 				<!-- fin block -->
 			</div>
 			<!-- clearfix sert à mettre à la suite les prochains élément sans qu'ils glisse dessous !-->
