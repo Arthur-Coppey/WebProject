@@ -224,3 +224,18 @@ Route::post('/addProduct', function () {
 return redirect('/shop');
 });
 
+Route::get('boiteIdees', function () {
+    return view('boiteIdees');
+});
+
+Route::post('/addIdeas', function () {
+    $currentId = \Auth::user()->id;
+
+    App\Idea::create([
+        'title' => request('titleIdeaAdd'),
+        'description' => request('descriptionIdeaAdd'),
+        'user_id' => $currentId,
+    ]);
+
+return redirect('/boiteIdees');
+});

@@ -5,11 +5,7 @@
 <!-- JS -->
 <script src="js/sideBar.js"></script>
 <script src="js/signCondition.js"></script>
-<<<<<<< HEAD
 <script src="js/scriptCookie.js"></script>
-=======
-<script src="js/cookiespopup.js"></script>
->>>>>>> d7839f5f8f2151351ee316fa4ca09e3aa8301108
 
 <!-- CSS -->
 <link href="/style/footer.css" rel="stylesheet">
