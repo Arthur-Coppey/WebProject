@@ -31,10 +31,20 @@
         </table>
     </div>
 
-    @php
+    {{-- @php
         $orderContent = (App\OrderContent::all('product_id'));
-        echo $orderContent;
-    @endphp
+        $sizeOrderContent = count(App\OrderContent::all());
+
+        for($i=0;$i<$sizeOrderContent;$i++){
+            $tab = array($orderContent[$i]['product_id']);
+            // echo $orderContentTab['amount'];
+            // echo $orderContentTab['product_id'];
+            $lol= array_count_values($tab);
+            print_r(array_count_values($tab));
+
+        }
+
+    @endphp --}}
 
  
     
@@ -48,7 +58,7 @@
             <tbody>
                 <tr>
                     <td align="center">
-                        <img class="imgArticles" id="mostRecentArticle" src="img/shop/1.jpg">
+                        <img class="imgArticles" id="mostRecentArticle" src="img/image.png">
                         <p class="articleType" style="font-size: 1vw;">Le plus récemment ajouté</p>
                     </td>
                     <td align="center">
