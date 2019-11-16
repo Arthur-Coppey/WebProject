@@ -137,3 +137,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('profile', function () {
     return view('profile');
 });
+
+Route::get('successPay', function () {
+    return view('successPay');
+});
+
+Route::get('send-mail', 'SendMail@mailsend');
+//SendMail = controller
