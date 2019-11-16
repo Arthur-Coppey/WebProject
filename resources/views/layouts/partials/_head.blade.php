@@ -6,10 +6,6 @@
 <script src="js/sideBar.js"></script>
 <script src="js/signCondition.js"></script>
 <script src="js/cookiespopup.js"></script>
-<<<<<<< HEAD
-<script src="js/scriptCookie.js"></script>
-=======
->>>>>>> 47ee245a48340dd1863dc38ad413f4e065e2cf52
 
 <!-- CSS -->
 <link href="/style/footer.css" rel="stylesheet">
