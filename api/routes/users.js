@@ -4,13 +4,19 @@ const express = require('express'),
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    controller.index().then(body => {
+    controller.index(req.header('Authorization')).then(body => {
+        res.json(body);
+    });
+});
+
+router.get('/events', function (req, res, next) {
+    controller.events(req.header('Authorization')).then(body => {
         res.json(body);
     });
 });
 
 router.get('/:id', function (req, res, next) {
-    controller.show(req.params.id).then(body => {
+    controller.show(req.header('Authorization'), Number(req.params.id)).then(body => {
         res.json(body);
     });
 });

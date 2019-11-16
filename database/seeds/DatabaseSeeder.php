@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             BasketTableSeeder::class,
             ProductsTableSeeder::class,
             MetaEventsTableSeeder::class,
-            EventsTableSeeder::class
+            EventsTableSeeder::class,
+            ParticipantsTableSeeder::class
         ]);
         Schema::enableForeignKeyConstraints();
     }

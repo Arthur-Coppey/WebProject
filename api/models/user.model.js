@@ -1,6 +1,8 @@
 const sequelize = require('../common/sequelize').sequelize,
     DataTypes = require('../common/sequelize').DataTypes,
-    jwt = require('jsonwebtoken');
+    jwt = require('jsonwebtoken'),
+    Participant = require('./participant.model'),
+    Event = require('./event.model');
 
 const User = sequelize.define('users', {
     firstName: {
@@ -52,31 +54,32 @@ const User = sequelize.define('users', {
     freezeTableName: true
 });
 
+User.belongsToMany(Event, { as: 'Participates', through: 'participants', foreignKey: 'user_id', otherKey: 'event_id'});
+Event.belongsToMany(User, { as: 'Participants', through: 'participants', foreignKey: 'event_id', otherKey: 'user_id'});
+
 User.methods = {};
 
 User.methods.generateAuthToken = async user => {
     // Generate an auth token for the user
-    console.log(this);
-    return jwt.sign({id: user.id}, process.env.JWT_KEY);
+    let token = jwt.sign({id: user.id}, process.env.JWT_KEY);
+    user.apiToken = token;
+    user.save().then(() => {});
+    return token;
 };
 
-User.methods.findByCredentials = async (email, password) => {
+User.methods.findByToken = async (token) => {
     // Search for a user by email and password.
-    await User.findOne({
+    return await User.findOne({
         where: {
-            email: email
+            apiToken: token
         }
     }).then(async user => {
-        if (!user) {
-            throw new Error({ error: 'Invalid login credentials' })
-        }
-        const isPasswordMatch = await bcrypt.compare(password, user.password);
-        if (!isPasswordMatch) {
-            throw new Error({ error: 'Invalid login credentials' })
-        }
+        return user;
     });
+};
 
-    return user
+User.methods.events = user => {
+    return user.getParticipates({attributes: ['label', 'description', 'location', 'date', 'price']});
 };
 
 module.exports = User;

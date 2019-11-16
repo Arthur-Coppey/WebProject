@@ -43,4 +43,6 @@ const Event = sequelize.define('events', {
     freezeTableName: true
 });
 
+
+
 module.exports = Event;
