@@ -8,7 +8,7 @@
 @section('main')
 
 <button type="button" class="btn btn-primary btn-sm" id="btnGauche">
-	<a href="/event_creater" style="text-decoration: none">
+	<a href="/event" style="text-decoration: none">
 		<p class="loginRegisterText">Voir les évènements en cours</p>
 	</a>
 </button>

@@ -84,6 +84,22 @@ Route::post('/shop/addBasket', function () {
   return redirect('/shop');
 });
 
+Route::post('/event/eventSub', function () {
+
+    $id = \Auth::user()->id;
+  App\Participant::create([
+    'user_id' => $id,
+    'event_id' => request('event_id')
+]);
+return redirect('/event');
+  });
+
+Route::post('/event/eventUnsub', function () {
+
+    $id = \Auth::user()->id;
+    $participant = App\Participant::where('user_id', $id)->where('event_id', request('event_id'))->delete();
+    return redirect('/event');
+});
 
 Route::get('shop/{id}', function ($id) {
     return view('product')->with('id', $id);
