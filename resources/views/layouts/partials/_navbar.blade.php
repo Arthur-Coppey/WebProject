@@ -11,7 +11,7 @@
     }
 </script>
 
-<div id="accordeon">
+<div id="accordeon" style="display: none;">
     <div class="card">
         <div class="collapse show" id="item1">
             <div class="card-body">
