@@ -205,3 +205,22 @@ Route::post('/addOrder', function () {
     return redirect('/send-mail');
 
 });
+
+Route::post('/suppProduct', function () {
+    App\Product::where('label' ,request('nameProductSupp'))->delete();
+
+return redirect('/shop');
+});
+
+Route::post('/addProduct', function () {
+
+    App\Product::create([
+        'label' => request('labelProductAdd'),
+        'description' => request('descriptionProductAdd'),
+        'price' => request('priceProductAdd'),
+        'center_id' => request('centerProductAdd')
+    ]);
+
+return redirect('/shop');
+});
+
