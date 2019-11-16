@@ -40,17 +40,28 @@
     margin: auto;
 }
 
-.payer-box {
-    margin: auto;
+#submitBut {
+    width: auto;
+    font-family: roboto, sans-serif;
+    font-size: 1em;
+    margin-right: 1vw;
+    border: none;
+    padding: 0.3vw;
+    color: white;
+    background-color: #5c88da;
+    border: white;
+    border-radius: 20px;
+    margin-left: 77%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+#submitBut:hover {
+    background-color: rgb(255, 194, 82);
 }
 
 .payer-text {
-    margin-left: 77%;
     font-size: 1vw;
-    border: 1px solid;
-    border-radius: 30px;
-    border-block-start: 2vw;
-    background-color: #5c88da;
     width: 80px;
 }
 

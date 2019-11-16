@@ -1,6 +1,5 @@
 function acceptCookies() {
     document.cookie = "acceptcookies=true";
-    alert(document.cookie);
     var cookieValue = getCookie("acceptcookies");
 }
 
