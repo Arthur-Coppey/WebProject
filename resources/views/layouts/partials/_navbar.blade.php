@@ -1,3 +1,5 @@
+
+
 <div id="accordeon">
     <div class="card">
         <div class="collapse show" id="item1">
@@ -8,7 +10,7 @@
                     <a href="https://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loihttps://www.cnil.fr/fr/cookies-traceurs-que-dit-la-loi" class="card-link" data-toggle="collapse" data-parent="#accordeon">
                         En savoir plus
                     </a>
-                    <a href="#item1" class="card-link" data-toggle="collapse" data-parent="#accordeon">
+                    <a onClick="createCookie()" href="#item1" class="card-link" data-toggle="collapse" data-parent="#accordeon">
                         Accepter
                     </a>
             </div>

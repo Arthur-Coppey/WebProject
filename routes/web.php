@@ -156,17 +156,27 @@ Route::post('/addOrder', function () {
     'user_id' =>  $currentId,
     ]);
 
-    
-    for($i=0;count($nbrFor);$i++){
-        $amount = App\Basket::where('user_id', $currentId)->first()->amount;
-        $product_id= App\Basket::where('user_id', $currentId)->first()->product_id;
-        $order_id = App\Order::where('user_id',  $currentId)->orderBy('date', 'DESC')->first()->id;
-            App\OrderContent::create([
-                'amount'=>$amount,
-                'product_id'=>$product_id,
-                'order_id'=>$order_id,
-            ]);
-        }   
 
-return redirect('/send-mail');
+    for($i=0;$i<count($nbrFor);$i++){
+
+        $amount = (App\Basket::where('user_id', $currentId)->get('amount'));        
+        $amountTab = $amount[$i];
+        $product_id = (App\Basket::where('user_id', $currentId)->get('product_id'));
+        $product_idTab = $product_id[$i];
+        $order_id = (App\Order::where('user_id', $currentId)->get('id'));
+        $order_idTab = $order_id[$i];
+
+            App\OrderContent::create([
+                'amount'=>$amountTab['amount'],
+                'product_id'=>$product_idTab['product_id'],
+                'order_id'=> $order_idTab['id'],
+            ]);
+    }  
+
+    App\Basket::where('user_id', $currentId)->delete();
+    
+
+
+    return redirect('/send-mail');
+
 });
