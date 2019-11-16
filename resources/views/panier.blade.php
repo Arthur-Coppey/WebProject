@@ -1,3 +1,5 @@
+<title>BDE CESI Bordeaux : Panier</title>
+
 @extends('layouts.index')
 @section('navbar')
 
@@ -23,14 +25,16 @@
         
     @endphp
 
+    
+<thead class="categories-panier">
+    <th scope="col" class="txt-cate cate-photo">Photo</th>
+    <th scope="col" class="txt-cate on-right">Nom</th>
+    <th scope="col" class="txt-cate on-right">Prix Unitaire</th>
+    <th scope="col" class="txt-cate on-right">Nombre d'articles</th>
+    <th scope="col" class="txt-cate on-right">Prix total</th>
+</thead>
+
     @foreach($nbrFor as $k=>$value)
-        <thead class="categories-panier">
-            <th scope="col" class="txt-cate cate-photo">Photo</th>
-            <th scope="col" class="txt-cate on-right">Nom</th>
-            <th scope="col" class="txt-cate on-right">Prix Unitaire</th>
-            <th scope="col" class="txt-cate on-right">Nombre d'articles</th>
-            <th scope="col" class="txt-cate on-right">Prix total</th>
-        </thead>
             @php
                 // $amount = (App\Basket::where('user_id', $currentID)->get('amount'));
                 // $product_id = (App\Basket::where('user_id', $currentID)->first('product_id'));
@@ -125,7 +129,7 @@
         <div class="payer-box">
             <input type="text" name="price" value = {{$addPay}} hidden>
 
-            <button type="submit" id="submitBut">
+            <button type="submit" id="submitBut" style="color: #5c88da; border: none;">
                 <a class="payer-text" style="text-decoration: none; color: white;">
                     PAYER
                 </a>

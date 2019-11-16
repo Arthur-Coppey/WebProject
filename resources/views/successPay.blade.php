@@ -1,3 +1,5 @@
+<title>BDE CESI Bordeaux : Paiement réussi</title>
+
 @extends('layouts.index')
 @section('navbar')
 

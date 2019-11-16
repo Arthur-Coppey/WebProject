@@ -1,3 +1,5 @@
+<title>BDE CESI Bordeaux : Conditions Générales de Vente</title>
+
 @extends('layouts.index')
 @section('navbar')
 

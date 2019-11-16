@@ -1,3 +1,5 @@
+<title>BDE CESI Bordeaux : Boutique</title>
+
 @extends('layouts.index')
 @section('navbar')
 

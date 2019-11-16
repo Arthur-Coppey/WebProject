@@ -1,3 +1,5 @@
+<title>BDE CESI Bordeaux : Mentions Légales</title>
+
 @extends('layouts.index')
 @section('navbar')
 

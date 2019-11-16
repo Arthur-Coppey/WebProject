@@ -1,3 +1,4 @@
+<title>BDE CESI Bordeaux : Accueil</title>
 
 <div class="body">
 
@@ -35,8 +36,6 @@
         $orderContent = (App\OrderContent::all('product_id'));
         echo $orderContent;
     @endphp
-
- 
     
     <div class="shopPreview">
 
