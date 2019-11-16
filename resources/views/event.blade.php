@@ -15,7 +15,7 @@
 @else
 
 {{-- if admin --}}
-@if ((App\User::where('id', (\Auth::user()->id))->first()->role_id)==2)
+@if ((App\User::where('id', (\Auth::user()->id))->first()->role_id)==2 | (App\User::where('id', (\Auth::user()->id))->first()->role_id)==3)
 	<button type="button" class="btn btn-primary btn-sm" id="btnGauche">
 		<a href="/event_creater" style="text-decoration: none">
 			<p class="loginRegisterText">Ajouter un évènement</p>

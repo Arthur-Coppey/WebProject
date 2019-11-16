@@ -61,7 +61,7 @@
 				@else
 
 				{{-- if admin --}}
-				@if ((App\User::where('id', (\Auth::user()->id))->first()->role_id)==2)
+				@if ((App\User::where('id', (\Auth::user()->id))->first()->role_id)==2 | (App\User::where('id', (\Auth::user()->id))->first()->role_id)==3)
 				<form method="POST" action="{{ 'suppProduct' }}">
 						@csrf
 						<div class="payer">
