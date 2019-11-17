@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             CentersTableSeeder::class,
             UsersTableSeeder::class,
+            BasketTableSeeder::class,
             ProductsTableSeeder::class,
             OrdersTableSeeder::class,
             OrdersContentTableSeeder::class,

@@ -17,3 +17,4 @@ class CentersTableSeeder extends Seeder
     }
     }
 }
+
