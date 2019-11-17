@@ -61,6 +61,13 @@
 <div class="clearfix">
 </div>
 
+@guest 
+@if (Route::has('register'))
+
+@endif
+{{-- connecter --}}
+@else
+@if ((App\User::where('id', (\Auth::user()->id))->first()->role_id)==2 | (App\User::where('id', (\Auth::user()->id))->first()->role_id)==3)
 
 <div class="del-add">
 	<form method="POST" action="{{ 'addProduct' }}">
@@ -156,6 +163,10 @@
 		</center>
 	</form>
 </div>
+
+@endif
+@endguest
+
 				
 				
 			

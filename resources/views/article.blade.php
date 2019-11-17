@@ -109,7 +109,7 @@
 
         @foreach ($envent_pictures as $event_picture)
           @php
-            $uri_picture = event_picture->URI;
+            $uri_picture = $event_picture->URI;
           @endphp
           <div class="extensions">
             <div class="gallery-items">
@@ -143,7 +143,7 @@
             <div class="core-info-cell-event">
 
               <div class="name-event">
-                <span>{{$user_first_name}} {{$user_last_name]] </span>
+                <span>{{$user_first_name}} {{$user_last_name}} </span>
 
               </div>
             
