@@ -54,39 +54,39 @@
 <div class="container associations">
 	<div class="row justify-content-center">
 		<div class="col asso">
-			<center><img class="imageAsso" src="img/xavier.png"/></center>
+			<center><img class="imageAsso" src="img/assos/root-me.png" width="200px"></center>
 			<center><strong>Root-Me</strong><br></center>
 		</div>
 		<div class="col asso">
-			<center><img class="imageAsso" src="img/pierre.png"/></center>
+			<center><img class="imageAsso" src="img/assos/robotique.png" width="200px"/></center>
 			<center><strong>Robotique</strong><br></center>
 		</div>
 		<div class="col asso">
-			<center><img class="imageAsso" src="img/axel.png"/></center>
+			<center><img class="imageAsso" src="img/assos/photo.png" width="200px"/></center>
 			<center><strong>Photo</strong><br></center>
 		</div>
 	</div>
 	<div class="row justify-content-center">
 		<div class="col asso">
-			<center><img class="imageAsso" src="img/xavier.png"/></center>
+			<center><img class="imageAsso" src="img/assos/escalade.png" width="200px"/></center>
 			<center><strong>Escalade</strong><br></center>
 		</div>
 		<div class="col asso">
-			<center><img class="imageAsso" src="img/pierre.png"/></center>
+			<center><img class="imageAsso" src="img/assos/muscu.png" width="200px"/></center>
 			<center><strong>Musculation</strong><br></center>
 		</div>
 		<div class="col asso">
-			<center><img class="imageAsso" src="img/axel.png"/></center>
+			<center><img class="imageAsso" src="img/assos/basket.png" width="200px"/></center>
 			<center><strong>Basket-Ball</strong><br></center>
 		</div>
 	</div>
 	<div class="row justify-content-center">
 		<div class="col asso">
-			<center><img class="imageAsso" src="img/xavier.png"/></center>
+			<center><img class="imageAsso" src="img/assos/eloquence.png" width="200px"/></center>
 			<center><strong>Eloquence</strong><br></center>
 		</div>
 		<div class="col asso">
-			<center><img class="imageAsso" src="img/pierre.png"/></center>
+			<center><img class="imageAsso" src="img/assos/games.png" width="200px"/></center>
 			<center><strong>AC/DC</strong><br></center>
 		</div>
 	</div>

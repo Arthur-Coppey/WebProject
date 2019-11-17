@@ -30,7 +30,7 @@
 					<div class="gallery-item-card" >
 						<div class="cover">
 							<div class="icon-cell">
-								<img class="icon" src="img/boof.png" alt="label bdd">
+								<img class="icon" src="img/shop/1.jpg" alt="label bdd">
 							</div>
 							<div class="core-info-cell">
 								<div class="name">
