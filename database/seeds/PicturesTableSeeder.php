@@ -3,6 +3,7 @@
 use App\Picture;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class PicturesTableSeeder extends Seeder
 {
@@ -13,6 +14,7 @@ class PicturesTableSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         Picture::truncate();
         $faker = Factory::create();
         for ($i = 0; $i < 10; $i++){
@@ -31,5 +33,6 @@ class PicturesTableSeeder extends Seeder
                 ]);
             }
         }
+        Schema::enableForeignKeyConstraints();
     }
 }
