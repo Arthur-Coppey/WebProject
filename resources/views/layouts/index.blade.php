@@ -3,10 +3,11 @@
     <head>
         @include('layouts/partials/_head')
     </head>
-    <body style = height :100%>
+    <body>
         <header>
             @include('layouts/partials/_sidebar')
-            @yield('navbar')
+            @include('layouts/partials/_navbar')
+            <br>
         </header>
 
         <main>

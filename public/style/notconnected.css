@@ -1,0 +1,11 @@
+/* When the user is not connected */
+
+.notlogedtext {
+    text-align: center;
+    font-size: 1vw;
+    font-family: roboto, sans-serif;
+}
+
+.redirectlinks {
+    margin: auto;
+}

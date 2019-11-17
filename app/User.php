@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'role_id', 'center_id',
+        'first_name', 'last_name', 'center_id', 'email', 'password', 'role_id', 'center_id',
     ];
 
     /**
@@ -87,4 +87,7 @@ class User extends Authenticatable
     public function notifs() {
         return $this->hasMany('App\Notification');
     }
+
+    
+
 }

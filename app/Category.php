@@ -18,7 +18,6 @@ class Category extends Model
     protected $fillable = ['label'];
 
     public function products() {
-        return $this->belongsToMany('App\Product', 'product_categories')
-            ->using('App\ProductCategory');
+        return $this->hasMany('App\Product');
     }
 }
