@@ -27,7 +27,7 @@
 				@endphp
 
 				<a href="../shop/{{$product->id}}" aria-label="nom produit" class="gallery-item-card-container">
-					<div class="gallery-item-card">
+					<div class="gallery-item-card" >
 						<div class="cover">
 							<div class="icon-cell">
 								<img class="icon" src="img/boof.png" alt="label bdd">
