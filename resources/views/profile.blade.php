@@ -22,7 +22,6 @@
 
 <div class="profil-title-div">
     <h2 class="titre-infos-profil">Prénom : <?php echo App\User::where('id' , \Auth::user()->id)->first()->first_name; ?> </h2>
-    
 </div>
 <div class="profil-title-div">
     <h2 class="titre-infos-profil">Nom : <?php echo App\User::where('id' , \Auth::user()->id)->first()->last_name; ?></h2>
@@ -45,25 +44,31 @@
     </a>
 </div>
 
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form><br>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form><br>
 
-    <div class="profil-title-div">
-        <h1 class="titre-profil">Evenement inscrit</h1>
-    </div>
+<div class="profil-title-div">
+    <h1 class="titre-profil">Inscrit aux Evénements :</h1>
+</div>
 
-    @php
-        $participant = App\Participant::all();
-    @endphp
+@php
+    $participant = App\Participant::all();
+@endphp
 
+<div class="list-events">
     @foreach ($participant as $i=>$value)
-    @php    
-        echo App\Event::where('id', $value->event_id)->get('label')[0]['label'];
-
+    <div class="eventName-div">
+        <center>
+            <a class="eventName-txt">
+    @php
+                echo App\Event::where('id', $value->event_id)->get('label')[0]['label'];
     @endphp
+            </a>
+        </center>
+    </div>
     @endforeach
-
+</div>
 
 @endguest
      

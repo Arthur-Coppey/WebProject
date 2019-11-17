@@ -40,3 +40,12 @@
 .log-out-div:hover {
     background-color: rgb(255, 194, 82);
 }
+
+.list-events {
+    padding-bottom: 2vw;
+}
+
+.eventName-txt {
+    font-size: 2vw;
+    font-family: sans-serif;
+}
