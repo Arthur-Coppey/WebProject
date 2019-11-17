@@ -25,13 +25,12 @@
           <h3 class="mb-0">{{$article->label}}</h3>
           <div class="mb-1 text-muted">{{$article->date}}</div>
           <p class="card-text mb-auto">{{$article->description}}</p>
+          
           @guest 
-
           @if (Route::has('register'))
             <button onclick="location.href='../login';" type="submit" id="submitBut" class="btn btn-primary btn-block">Connecte toi pour t'incrire à l'évènement</button>
-         
 
-          {{-- connecté --}}
+            {{-- connecté --}}
 
           @else
 
@@ -42,7 +41,6 @@
 
 
             @if (strtotime($event_date) < strtotime(date('Y-m-d')))
-
             @else   
               @if ( App\Participant::where('event_id', $event_id)->first() == null)
                 <form method="POST" action="{{ 'eventSub' }}">
@@ -72,11 +70,7 @@
         @endguest
 
           
-      </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="/img/boof.png" alt="{{$article->label}}">
-        </div>
-      </div>
+
       @if (strtotime($event_date) < strtotime(date('Y-m-d')))
 
         <!--to post comments (manque l'upload photo)-->
@@ -107,7 +101,7 @@
           $event_pictures = App\Picture::where('event_id','$id');
         @endphp
 
-        @foreach ($envent_pictures as $event_picture)
+        @foreach ($event_pictures as $event_picture)
           @php
             $uri_picture = $event_picture->URI;
           @endphp
