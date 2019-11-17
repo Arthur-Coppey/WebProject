@@ -177,7 +177,7 @@ Route::post('/addOrder', function () {
         'user_id' =>  $currentId,
     ]);
 
-    for($i=0;$i<count($nbrFor);$i++){
+    for($i = 0; $i < count($nbrFor); $i++){
         $amount = (App\Basket::where('user_id', $currentId)->get('amount'));
         $amountTab = $amount[$i];
         $product_id = (App\Basket::where('user_id', $currentId)->get('product_id'));
@@ -235,4 +235,9 @@ Route::post('/suppIdeas', function () {
     App\Idea::where('title' , request('titleIdeaAdd'))->delete();
 
     return redirect('/boiteIdees');
+});
+
+Route::post('/deleteBasketItem', function () {
+    App\Basket::where('user_id', Auth::user()->id)->where('product_id', request('id_to_delete'))->delete();
+    return redirect('/panier');
 });
