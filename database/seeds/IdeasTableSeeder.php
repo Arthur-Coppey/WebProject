@@ -1,6 +1,7 @@
 <?php
 
 use App\Idea;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class IdeasTableSeeder extends Seeder
@@ -12,8 +13,8 @@ class IdeasTableSeeder extends Seeder
      */
     public function run()
     {
-        Idea::troncate();
-        $faker = \Faker\Factory::create();
+        Idea::truncate();
+        $faker = Factory::create();
         for ($i = 0; $i < 10; $i++){
             Idea::create([
                 'title' => $faker->lastName,

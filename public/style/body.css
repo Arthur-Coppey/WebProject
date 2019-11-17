@@ -69,18 +69,12 @@
 
 /* images dans la case événements */
 .imgEvent {
-    width: 100%;
+    width: 16vw;
     height: auto;
 }
 
 /* images dans la case articles */
 .imgArticles {
-    width: 100%;
+    width: 16vw;
     height: auto;
 }
-
-
-
-
-
-

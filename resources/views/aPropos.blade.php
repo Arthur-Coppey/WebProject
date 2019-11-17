@@ -1,3 +1,5 @@
+<title>BDE CESI Bordeaux : A Propos</title>
+
 @extends('layouts.index')
 @section('navbar')
 

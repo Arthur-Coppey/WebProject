@@ -1,0 +1,30 @@
+/* Boîte à Idées */
+
+.del-idea {
+    padding-bottom: 2vw;
+}
+
+.add-idea {
+    padding-bottom: 2vw;
+}
+
+.ideas-list-title {
+    text-align: center;
+    font-size: 2vw;
+    font-family: sans-serif;
+    padding-bottom: 2vw;
+}
+
+.desc-idee {
+    font-size: 1.2vw;
+    font-family: sans-serif;
+}
+
+.single-idea {
+    padding-bottom: 1vw;
+}
+
+.idea-title-div {
+    width: 30%;
+    margin: auto;
+}

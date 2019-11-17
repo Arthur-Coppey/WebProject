@@ -17,7 +17,6 @@ class ParticipantsTableSeeder extends Seeder
             Participant::create([
                 'user_id' => rand(1, 10),
                 'event_id' => rand(1, 10),
-
             ]);
         }
     }

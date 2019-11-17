@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->string('label');
             $table->text('description');
             $table->string('location');
-            $table->dateTime('date');
+            $table->date('date');
             $table->float('price');
             $table->boolean('recurring');
             $table->boolean('hidden');

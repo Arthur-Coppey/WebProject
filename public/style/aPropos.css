@@ -27,14 +27,3 @@
 .membre {
     padding-bottom: 1vw;
 }
-
-::selection {
-    background-color: #5c88da;
-    color: white;
-}
-
-/* Firefox */
-::-moz-selection {
-    background-color: #5c88da;
-    color: white;
-}

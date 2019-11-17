@@ -19,9 +19,19 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             BasketTableSeeder::class,
             ProductsTableSeeder::class,
+            OrdersTableSeeder::class,
+            OrdersContentTableSeeder::class,
             MetaEventsTableSeeder::class,
             EventsTableSeeder::class,
-            ParticipantsTableSeeder::class
+            BasketsTableSeeder::class,
+            CategoriesTableSeeder::class,
+            CommentsTableSeeder::class,
+            IdeasTableSeeder::class,
+            IdeasLikesTableSeeder::class,
+            NotificationsTableSeeder::class,
+            ParticipantsTableSeeder::class,
+            SubscribersTableSeeder::class,
+            PicturesTableSeeder::class,
         ]);
         Schema::enableForeignKeyConstraints();
     }
