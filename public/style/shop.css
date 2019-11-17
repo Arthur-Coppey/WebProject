@@ -1,0 +1,54 @@
+/* Boutons supprimer et ajouter du shop */
+
+.add-title {
+    margin-top: 2vw;
+    font-family: roboto, sans-serif;
+    font-size: 2.2em;
+}
+
+.del-title {
+    font-family: roboto, sans-serif;
+    font-size: 2.2em;
+}
+
+.del-prod {
+    margin-bottom: 2vw;
+}
+
+.input-desc {
+    text-align: center;
+    padding-bottom: 0.5vw;
+}
+
+.input-form {
+    text-align: center;
+    padding-bottom: 0.5vw;
+}
+
+.add-text {
+    margin: 1vw;
+}
+
+.add-text-butt {
+    margin-top: 1vw;
+    border: none;
+    border-radius: 20px;
+    background-color: #5c88da;
+}
+
+.add-text-butt:hover {
+    background-color: rgb(255, 194, 82);
+}
+
+.del-text-butt {
+    padding-right: 1vw;
+    padding-left: 1vw;
+    margin-top: 1vw;
+    border: none;
+    border-radius: 20px;
+    background-color: #5c88da;
+}
+
+.del-text-butt:hover {
+    background-color: rgb(255, 194, 82);
+}
