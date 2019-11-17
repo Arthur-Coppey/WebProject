@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
             OrdersContentTableSeeder::class,
             MetaEventsTableSeeder::class,
             EventsTableSeeder::class,
-            BasketsTableSeeder::class,
             CategoriesTableSeeder::class,
             CommentsTableSeeder::class,
             IdeasTableSeeder::class,
