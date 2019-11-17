@@ -108,10 +108,12 @@ Route::post('/downloadParticipantList', function (){
         $user_id = $participant->user_id;
         $first_name = App\User::where('id', $user_id)->first()->first_name;
         $last_name = App\User::where('id', $user_id)->first()->last_name;
-        $participant_user = array($first_name, $last_name);
+        $participant_user = array($first_name, ';', $last_name);
         fputcsv($handle,  [
-            $first_name,
+            $first_name
+            .';'.
             $last_name
+            .';'
         ]);
         fclose($handle);
     }
