@@ -51,7 +51,7 @@
 				<div class="gallery-item-card-event">
 
 					<div class="icon-cell-event">
-						<img class="icon" src="img/boof.png" alt="{{$label}}">
+						<img class="icon" src="img/assos/eloquence.png" alt="{{$label}}">
 					</div>
 
 					<div class="core-info-cell-event">

@@ -64,11 +64,17 @@
 
       
       <h2 class="contact-title">Commentaires</h2>
-      @foreach ($event_comments as $event_comment)
+      
+      @php
+          // $comment = App\Comment::all()->sortByDesc('created_at');
+          $comment = App\Comment::all();
+      @endphp
+
+      @foreach ($comment as $value)
 
       @php
-      $user_first_name = App\User::where('id', $event_comment->user_id)->first()->first_name;
-      $user_last_name = App\User::where('id', $event_comment->user_id)->first()->last_name;
+          $userFName = App\User::where('id', $value->user_id)->get('first_name');
+           
       @endphp
 
 
@@ -78,19 +84,19 @@
           <div class="core-info-cell-event">
 
             <div class="name-event">
-              <span>{{$user_first_name}} {{$user_last_name}} </span>
+              <span>{{App\User::where('id', $value->user_id)->get('first_name')[0]['first_name']}} {{App\User::where('id', $value->user_id)->get('last_name')[0]['last_name']}}</span>
 
             </div>
 
             <div class="item-details-event">
-              <div class="description">{{$event_comment->content}}</div>
+              <div class="description">{{$value->content}}</div>
             </div>
 
           </div>
 
         </div>
-        @if((App\User::where('id', \Auth::user()->id)->role() == "BDE-staff")||(App\User::where('id',
-        \Auth::user()->id)->role() == "CESI-staff"))
+        @if ((App\User::where('id', (\Auth::user()->id))->first()->role_id)==2 | (App\User::where('id', (\Auth::user()->id))->first()->role_id)==3)
+
         <!--pas de lien fais faire la fonction de supression-->
         <button type="submit" id="submitBut" class="btn btn-primary btn-block">supprimer</button>
         @endif
