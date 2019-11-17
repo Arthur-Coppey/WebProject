@@ -12,12 +12,11 @@ class ParticipantsTableSeeder extends Seeder
      */
     public function run()
     {
-        Particpant::truncate();
+        Participant::truncate();
         for ($i = 0; $i < 10; $i++){
-            Particpant::create([
+            Participant::create([
                 'user_id' => rand(1, 10),
                 'event_id' => rand(1, 10),
-
             ]);
         }
     }

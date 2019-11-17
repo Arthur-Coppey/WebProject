@@ -1,6 +1,7 @@
 <?php
 
 use App\Product;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class ProductsTableSeeder extends Seeder
@@ -13,12 +14,12 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         Product::truncate();
-        $faker = \Faker\Factory::create();
+        $faker = Factory::create();
         for ($i = 0; $i < 10; $i++){
             Product::create([
                 'label' => $faker->lastName,
                 'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-                'price' => '10.00',
+                'price' => rand(5, 25),
                 'center_id' => rand(1, 12)
             ]);
         }

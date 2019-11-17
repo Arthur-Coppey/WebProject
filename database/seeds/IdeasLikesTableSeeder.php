@@ -12,10 +12,10 @@ class IdeasLikesTableSeeder extends Seeder
      */
     public function run()
     {
-        IdeasLike::truncate();
+        IdeaLike::truncate();
         for ($i = 0; $i < 10; $i++){
-            IdeasLike::create([
-                'like' => 1,
+            IdeaLike::create([
+                'like' => rand(0, 1),
                 'user_id' => rand(1, 10),
                 'idea_id' => rand(1, 10),
             ]);

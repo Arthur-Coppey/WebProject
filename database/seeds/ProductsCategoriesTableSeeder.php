@@ -12,11 +12,11 @@ class ProductsCategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        Category::truncate();
-        $categories=['goodies', 'pulls'];
-        foreach($categories as $categorie){
-            Category::create([
-                'label' => $categorie,
+        ProductCategory::truncate();
+        for ($i = 0; $i < 10; $i++) {
+            ProductCategory::create([
+                'product_id' => rand(1, 10),
+                'category_id' => rand(1, 2)
             ]);
         }
     }
