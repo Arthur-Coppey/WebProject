@@ -99,7 +99,7 @@ Route::post('/event/eventUnsub', function () {
     return redirect('/event');
 });
 
-Route::get('/downloadParticipantList', function (){
+Route::post('/downloadParticipantList', function (){
     $id = Auth::user()->id;
     $participants = App\Participant::all()->where('event_id', request('event_id'));
     $filename = "participantListe.csv";
@@ -115,13 +115,10 @@ Route::get('/downloadParticipantList', function (){
         ]);
         fclose($handle);
     }
-
-
     $headers = array(
         'Content-Type' => 'text/csv',
     );
-    return Response::download($filename, 'participantList.csv', $headers);
-   // return redirect('/event');
+    return Response::download($filename, 'participantListe.csv', $headers);
 });
 
 Route::get('shop/{id}', function ($id) {
@@ -137,10 +134,6 @@ Route::get('event/{id}', function ($id) {
 });
 
 Auth::routes();
-
-// Route::get('panier', function ($user_id, $product_id) {
-//     return view('panier');
-// });
 
 Route::get('panier', function () {
     return view('panier');
@@ -240,4 +233,13 @@ Route::post('/suppIdeas', function () {
 Route::post('/deleteBasketItem', function () {
     App\Basket::where('user_id', Auth::user()->id)->where('product_id', request('id_to_delete'))->delete();
     return redirect('/panier');
+});
+
+Route::post('/addComment', function () {
+    App\Comment::create([
+        'content'=>request('content'),
+        'user_id'=> Auth::user()->id,
+        'event_id'=> request('event_id')
+    ]);
+    return redirect('/event');
 });
