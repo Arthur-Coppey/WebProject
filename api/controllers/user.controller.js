@@ -1,4 +1,5 @@
-const User = require('../models/user.model');
+const User = require('../models/user.model'),
+    bcrypt = require('bcrypt');
 const controller = {
     verifyAuth: function (token) {
         return User.methods.findByToken(token);
@@ -40,12 +41,14 @@ const controller = {
     },
     register: function (email, password) {
         return User.findOne({
-            where: {email: email, password: password}
-        }).then(result => {
-            return User.methods.generateAuthToken(result);
+            where: {email: email}
+        }).then(async result => {
+            const match = await bcrypt.compare(password, result.password.replace('$2y$', '$2b$'));
+            if (match) {
+                return User.methods.generateAuthToken(result);
+            }
         });
     }
-
 };
 
 module.exports = controller;

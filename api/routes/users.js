@@ -1,6 +1,7 @@
 const express = require('express'),
     router = express.Router(),
-    controller = require('../controllers/user.controller');
+    controller = require('../controllers/user.controller'),
+    bcrypt = require('bcrypt');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
