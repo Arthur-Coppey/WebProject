@@ -24,7 +24,6 @@ class DatabaseSeeder extends Seeder
             EventsTableSeeder::class,
             BasketsTableSeeder::class,
             CategoriesTableSeeder::class,
-            ProductsCategoriesTableSeeder::class,
             CommentsTableSeeder::class,
             IdeasTableSeeder::class,
             IdeasLikesTableSeeder::class,

@@ -23,6 +23,13 @@ class RemoveProductsCategoriesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::create('product_categories', function (Blueprint $table) {
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('product_id')->references('id')->on('products');
+
+            $table->timestamps();
+        });
     }
 }

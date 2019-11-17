@@ -20,7 +20,8 @@ class ProductsTableSeeder extends Seeder
                 'label' => $faker->lastName,
                 'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
                 'price' => rand(5, 25),
-                'center_id' => rand(1, 12)
+                'center_id' => rand(1, 12),
+                'category_id' => rand(1, 2)
             ]);
         }
     }
