@@ -107,7 +107,7 @@
           $event_pictures = App\Picture::where('event_id','$id');
         @endphp
 
-        @foreach ($envent_pictures as $event_picture)
+        @foreach ($event_pictures as $event_picture)
           @php
             $uri_picture = $event_picture->URI;
           @endphp
