@@ -65,6 +65,11 @@
     width: 80px;
 }
 
+.paypal-paiment {
+    width: 10%;
+    margin-left: 70%;
+}
+
 .payer-text:hover {
     background-color: rgb(255, 194, 82);
 }

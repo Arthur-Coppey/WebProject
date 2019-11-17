@@ -137,8 +137,14 @@
             </button>
         </div>
         <div class="paypal-paiment">
-            <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
-            <script>paypal.Buttons().render('body');</script>
+            <script src="https://www.paypal.com/sdk/js?client-id=AevGLXweHKzzybNQzKGfEJoTca0O3LBI0T7JdKqSEbX8nvzt3acVk-wRNKYTbm5xijHvW6whCIhBK7bl"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.</script>
+
+            <div id="paypal-button-container"></div>
+
+            <script>
+                paypal.Buttons().render('#paypal-button-container');
+                // This function displays Smart Payment Buttons on your web page.
+            </script>
         </div>
     </div>
 </form>

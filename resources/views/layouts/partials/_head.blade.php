@@ -2,6 +2,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Ensures optimal rendering on mobile devices. -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Optimal Internet Explorer compatibility -->
+
 <!-- JS -->
 <script src="js/sideBar.js"></script>
 <script src="js/signCondition.js"></script>
