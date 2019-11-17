@@ -243,3 +243,8 @@ Route::post('/addComment', function () {
     ]);
     return redirect('/event');
 });
+
+Route::post('/commentDelete', function () {
+    App\Comment::where('id', request('comment_id'))->first()->delete();
+    return redirect('/event');
+});

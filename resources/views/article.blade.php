@@ -123,7 +123,12 @@
                 @else
                 @if ((App\User::where('id', ($user_id))->first()->role_id)==2 | (App\User::where('id', ($user_id))->first()->role_id)==3)
                 <!--pas de lien fais faire la fonction de supression-->
-                <button type="submit" id="submitBut" class="btn btn-primary btn-block">supprimer</button>
+                <form method="POST" action="{{ '/commentDelete' }}">
+                    @csrf
+                    <!-- il faudrat peut être changer value,je sais pas si j'utilise la bonne fonction addComment-->
+                    <input type="text" name="comment_id" value={{$event_comment->id}} hidden>
+                    <button type="submit" id="submitBut" class="btn btn-primary btn-block">supprimer</button>
+                </form>
                 @endif
                 @endguest
                 
