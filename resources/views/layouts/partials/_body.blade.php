@@ -34,10 +34,6 @@
 
     {{-- @php
         $orderContent = (App\OrderContent::all('product_id'));
-<<<<<<< HEAD
-        echo $orderContent;
-    @endphp
-=======
         $sizeOrderContent = count(App\OrderContent::all());
 
         for($i=0;$i<$sizeOrderContent;$i++){
@@ -52,7 +48,6 @@
     @endphp --}}
 
  
->>>>>>> f3645e108cff31f4c28efa405dda4720288ddf32
     
     <div class="shopPreview">
 
