@@ -137,6 +137,10 @@
                 </a>
             </button>
         </div>
+        <div class="paypal-paiment">
+            <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+            <script>paypal.Buttons().render('body');</script>
+        </div>
     </div>
 </form>
     {{-- <input type="text" name="product_id" value = {{$product_id}} hidden> --}}
