@@ -102,7 +102,7 @@ Route::post('/event/eventUnsub', function () {
 Route::get('/downloadParticipantList', function (){
     $id = Auth::user()->id;
     $participants = App\Participant::all()->where('event_id', request('event_id'));
-    $filename = "participant.csv";
+    $filename = "participantListe.csv";
     foreach ($participants as $participant){
         $handle = fopen($filename, 'w+');
         $user_id = $participant->user_id;
