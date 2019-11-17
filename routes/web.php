@@ -57,7 +57,7 @@ Route::post('create-event', function () {
     $ocurrences = request('ocurrences');
     $date = request('date');
     $frequency = request('frequency');
-    for ($i=0; $i < $ocurrences; $i++) { 
+    for ($i=0; $i < $ocurrences; $i++) {
         App\Event::create([
             'label' => request('label'),
             'location' => request('location'),
@@ -65,44 +65,42 @@ Route::post('create-event', function () {
             'price' => request('price'),
             'description' => request('description'),
             'meta_event_id' => '1'
-        ]); 
+        ]);
         $date = date('Y-m-d', strtotime($date. ' + '.$frequency.' days'));
     }
-   return redirect('/event');
+    return redirect('/event');
 });
 
 
 Route::post('/shop/addBasket', function () {
 
-      $id = \Auth::user()->id;
+    $id = Auth::user()->id;
     App\Basket::create([
       'amount' => request('amount'),
       'user_id' => $id,
       'product_id' => request('product_id')
-  ]);
+    ]);
 
-  return redirect('/shop');
+    return redirect('/shop');
 });
 
 Route::post('/event/eventSub', function () {
-
-    $id = \Auth::user()->id;
-  App\Participant::create([
-    'user_id' => $id,
-    'event_id' => request('event_id')
-]);
-return redirect('/event');
-  });
+    $id = Auth::user()->id;
+    App\Participant::create([
+        'user_id' => $id,
+        'event_id' => request('event_id')
+    ]);
+    return redirect('/event');
+});
 
 Route::post('/event/eventUnsub', function () {
-
-    $id = \Auth::user()->id;
+    $id = Auth::user()->id;
     $participant = App\Participant::where('user_id', $id)->where('event_id', request('event_id'))->delete();
     return redirect('/event');
 });
 
 Route::get('/downloadParticipantList', function (){
-    $id = \Auth::user()->id;
+    $id = Auth::user()->id;
     $participants = App\Participant::all()->where('event_id', request('event_id'));
     $filename = "participant.csv";
     foreach ($participants as $participant){
@@ -156,7 +154,6 @@ Route::get('app', function () {
     return view('layouts/app');
 });
 
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('profile', function () {
@@ -171,45 +168,39 @@ Route::get('send-mail', 'SendMail@mailsend');
 //SendMail = controller
 
 Route::post('/addOrder', function () {
-
-    $currentId = \Auth::user()->id;
+    $currentId = Auth::user()->id;
     $nbrFor = (App\Basket::where('user_id', $currentId)->get());
 
     App\Order::create([
-    'date' => date('Y-m-d H:i:s'),
-    'price' => request('price'),
-    'user_id' =>  $currentId,
+        'date' => date('Y-m-d H:i:s'),
+        'price' => request('price'),
+        'user_id' =>  $currentId,
     ]);
 
-
     for($i=0;$i<count($nbrFor);$i++){
-
-        $amount = (App\Basket::where('user_id', $currentId)->get('amount'));        
+        $amount = (App\Basket::where('user_id', $currentId)->get('amount'));
         $amountTab = $amount[$i];
         $product_id = (App\Basket::where('user_id', $currentId)->get('product_id'));
         $product_idTab = $product_id[$i];
         $order_id = (App\Order::where('user_id', $currentId)->get('id'));
         $order_idTab = $order_id[$i];
 
-            App\OrderContent::create([
-                'amount'=>$amountTab['amount'],
-                'product_id'=>$product_idTab['product_id'],
-                'order_id'=> $order_idTab['id'],
-            ]);
-    }  
+        App\OrderContent::create([
+            'amount'=>$amountTab['amount'],
+            'product_id'=>$product_idTab['product_id'],
+            'order_id'=> $order_idTab['id'],
+        ]);
+    }
 
     App\Basket::where('user_id', $currentId)->delete();
-    
-
 
     return redirect('/send-mail');
-
 });
 
 Route::post('/suppProduct', function () {
     App\Product::where('label' ,request('nameProductSupp'))->delete();
 
-return redirect('/shop');
+    return redirect('/shop');
 });
 
 Route::post('/addProduct', function () {
@@ -221,7 +212,7 @@ Route::post('/addProduct', function () {
         'center_id' => request('centerProductAdd')
     ]);
 
-return redirect('/shop');
+    return redirect('/shop');
 });
 
 Route::get('boiteIdees', function () {
@@ -229,7 +220,7 @@ Route::get('boiteIdees', function () {
 });
 
 Route::post('/addIdeas', function () {
-    $currentId = \Auth::user()->id;
+    $currentId = Auth::user()->id;
 
     App\Idea::create([
         'title' => request('titleIdeaAdd'),
@@ -237,11 +228,11 @@ Route::post('/addIdeas', function () {
         'user_id' => $currentId,
     ]);
 
-return redirect('/boiteIdees');
+    return redirect('/boiteIdees');
 });
 
 Route::post('/suppIdeas', function () {
     App\Idea::where('title' , request('titleIdeaAdd'))->delete();
 
-return redirect('/boiteIdees');
+    return redirect('/boiteIdees');
 });
