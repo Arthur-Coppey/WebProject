@@ -29,40 +29,50 @@
 
           @if (Route::has('register'))
             <button onclick="location.href='../login';" type="submit" id="submitBut" class="btn btn-primary btn-block">Connecte toi pour t'incrire à l'évènement</button>
-          @endif
+         
 
           {{-- connecté --}}
 
           @else
 
+            @php
+              $user_id = \Auth::user()->id;
+              $event_id=App\Event::where('id', $id)->first()->id;
+            @endphp    
 
-          @if (strtotime($event_date) < strtotime(date('Y-m-d')))
 
-          @else   
-            @if ( App\Participant::where('event_id', $event_id)->first() == null)
-              <form method="POST" action="{{ 'eventSub' }}">
-                @csrf
-                <input type="text" name="event_id" value = {{$event_id}} hidden>
-                <button type="submit" id="submitBut" class="btn btn-primary btn-block">Je m'inscrit</button>
-              </from>
-            @else
-              <form method="post" action="{{ 'eventUnsub' }}">
-                @csrf
-                <input type="text" name="event_id" value = {{$event_id}} hidden>
-                <button type="submit" id="submitBut" class="btn btn-primary btn-block">Je me désinscris</button>
-              </from>
-              <!--fonction eventLike coder ?-->
-              <form method="POST" action="{{ 'eventLike' }}">
-                @csrf
-                <input type="text" name="event_id" value = {{$event_id}} hidden>
-                <button type="submit" id="submitBut" class="btn btn-primary btn-block">like</button>
-              </from>
+            @if (strtotime($event_date) < strtotime(date('Y-m-d')))
+
+            @else   
+              @if ( App\Participant::where('event_id', $event_id)->first() == null)
+                <form method="POST" action="{{ 'eventSub' }}">
+                  @csrf
+                  <input type="text" name="event_id" value = {{$event_id}} hidden>
+                  <button type="submit" id="submitBut" class="btn btn-primary btn-block">Je m'inscrit</button>
+                </from>
+              @else
+                <form method="post" action="{{ 'eventUnsub' }}">
+                  @csrf
+                  <input type="text" name="event_id" value = {{$event_id}} hidden>
+                  <button type="submit" id="submitBut" class="btn btn-primary btn-block">Je me désinscris</button>
+                </from>
+                <!--fonction eventLike coder ?-->
+                <form method="POST" action="{{ 'eventLike' }}">
+                  @csrf
+                  <input type="text" name="event_id" value = {{$event_id}} hidden>
+                  <button type="submit" id="submitBut" class="btn btn-primary btn-block">like</button>
+                </from>
             @endif
+            <button onclick="location.href='/downloadParticipantList';" class="btn btn-primary btn-block" name="event_id" value = {{$event_id}}>Télécharger la liste des participants</button>
           @endif
+
+
+
+
         @endguest
 
           
-        </div>
+      </div>
         <div class="col-auto d-none d-lg-block">
           <img src="/img/boof.png" alt="{{$article->label}}">
         </div>
