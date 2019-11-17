@@ -12,7 +12,7 @@ class MetaEvent extends Model
      * @var array
      */
     protected $fillable = [
-        'label', 'descrition', 'location', 'start_date', 'occurences', 'frequency', 'price', 'hidden', 'user_id',
+        'label', 'description', 'location', 'start_date', 'occurences', 'frequency', 'price', 'hidden', 'user_id',
     ];
 
     public function user() {

@@ -1,6 +1,7 @@
 <?php
 
 use App\MetaEvent;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class MetaEventsTableSeeder extends Seeder
@@ -13,14 +14,14 @@ class MetaEventsTableSeeder extends Seeder
     public function run()
     {
         MetaEvent::truncate();
-        $faker = \Faker\Factory::create();
+        $faker = Factory::create();
         for ($i = 0; $i < 10; $i++){
             MetaEvent::create([
                 'label' => $faker->lastName,
                 'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
                 'location' => 'salle '.rand(101, 109),
                 'start_date' => $faker->date($format = 'Y-m-d', $min = 'now'),
-                'ocurrences' => rand(1, 10),
+                'occurrences' => rand(1, 10),
                 'frequency' => 7,
                 'price' => 10.00,
                 'user_id' => rand(1, 10)
