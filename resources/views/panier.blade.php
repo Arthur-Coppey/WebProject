@@ -4,12 +4,12 @@
 @section('navbar')
 
      @include('layouts/partials/_navbar')
-     
+
 
 @endsection('navbar')
 @section('main')
 
-@guest 
+@guest
 @if (Route::has('register'))
 
     @include('layouts/partials/_notconnected')
@@ -20,12 +20,12 @@
 
 <table class="list-articles" width="60%">
     @php
-        $currentID = \Auth::user()->id;  
+        $currentID = Auth::user()->id;
         $nbrFor = (App\Basket::where('user_id', $currentID)->get());
-        
+
     @endphp
 
-    
+
 <thead class="categories-panier">
     <th scope="col" class="txt-cate cate-photo">Photo</th>
     <th scope="col" class="txt-cate on-right">Nom</th>
@@ -35,15 +35,6 @@
 </thead>
 
     @foreach($nbrFor as $k=>$value)
-            @php
-                    
-                // $amount = (App\Basket::where('user_id', $currentID)->get('amount'));
-                // $product_id = (App\Basket::where('user_id', $currentID)->first('product_id'));
-                // $order_id = (App\Order::where('user_id', $currentID)->get('id'));
-                // $order_idTab = $order_id[$i];
-                // echo $order_idTab['id'];
-                echo count($nbrFor);
-            @endphp
 
         <tbody>
             <tr class="article">
@@ -52,13 +43,12 @@
                 </td>
                 <td class="nom-article on-right">
                     <a class="text-articles-panier text-nom">
-                        @php    
-                            $currentID = \Auth::user()->id;  
+                        @php
+                            $currentID = Auth::user()->id;
                             $product_id = $value->product_id;
                             $product_name = (App\Product::where('id', $product_id)->first()->label);
                             echo $product_name;
                         @endphp
-
                     </a>
                 </td>
                 <td class="prix-unitaire on-right">
@@ -71,18 +61,27 @@
                     @php
                         $product_amount = $value->amount;
                         echo $product_amount;
-                        $totalArticle[$k] = $product_amount;                 
+                        $totalArticle[$k] = $product_amount;
                     @endphp
                 </td>
                 <td class="prix-total-article on-right">
                     @php
-                        $totalProduct = $product_amount*$product_price; 
+                        $totalProduct = $product_amount*$product_price;
                         echo ($totalProduct);
                         $totalToPay[$k] = $totalProduct;
                     @endphp
                 </td>
+                <td>
+                    <form method="POST" action="{{ 'deleteBasketItem' }}">
+                        @csrf
+                        <input type="text" name="id_to_delete" value = {{$product_id}} hidden>
+                        <button type="submit" id="submitDel" style="color: #ffffff; border: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </form>
+                </td>
             </tr>
-    
+
         </tbody>
     @endforeach
 </table>
@@ -109,14 +108,14 @@
             </td>
             <td class="txt-totaux total-article on-right" width="16%">
 
-                <a class="text-articles-panier prix-total-panier">                   
+                <a class="text-articles-panier prix-total-panier">
                     @php
                         $addPay = 0;
                         for($i=0;$i< count($nbrFor);$i++){
                             $addPay = $addPay + $totalToPay[$i];
                         }
                         echo $addPay.'€';
-                        
+
                     @endphp
                 </a>
 
@@ -140,12 +139,12 @@
     </div>
 </form>
     {{-- <input type="text" name="product_id" value = {{$product_id}} hidden> --}}
-    
-    
+
+
               {{-- <input type="text" name="amount" placeholder="combien d'article"> --}}
               {{-- <button type="submit" id="submitBut" class="btn btn-primary btn-block">Ajouter au panier</button> --}}
               {{-- <input type="text" name="product_id" value = {{$product_id}} hidden> --}}
-              
+
 
 
 @endguest
