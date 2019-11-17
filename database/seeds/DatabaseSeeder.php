@@ -1,9 +1,7 @@
 <?php
 
-use App\Category;
-use App\Event;
-use App\Product;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,12 +12,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         $this->call([
             RolesTableSeeder::class,
             CentersTableSeeder::class,
-            CategoriesTableSeeder::class,
+            UsersTableSeeder::class,
             ProductsTableSeeder::class,
-            EventsTableSeeder::class
-            ]);
+            OrdersTableSeeder::class,
+            OrdersContentTableSeeder::class,
+            MetaEventsTableSeeder::class,
+            EventsTableSeeder::class,
+            BasketsTableSeeder::class,
+            CategoriesTableSeeder::class,
+            CommentsTableSeeder::class,
+            IdeasTableSeeder::class,
+            IdeasLikesTableSeeder::class,
+            NotificationsTableSeeder::class,
+            ParticipantsTableSeeder::class,
+            SubscribersTableSeeder::class,
+            PicturesTableSeeder::class,
+        ]);
+        Schema::enableForeignKeyConstraints();
     }
 }

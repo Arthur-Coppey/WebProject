@@ -1,6 +1,7 @@
 <?php
 
 use App\Event;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class EventsTableSeeder extends Seeder
@@ -13,15 +14,15 @@ class EventsTableSeeder extends Seeder
     public function run()
     {
         Event::truncate();
-        $faker = \Faker\Factory::create();
+        $faker = Factory::create();
         for ($i = 0; $i < 10; $i++){
             Event::create([
                 'label' => $faker->lastName,
                 'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
                 'location' => 'salle '.rand(101, 109),
-                'date' => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'date' => $faker->dateTime,
                 'price' => '10.00',
-                'meta_event_id' => rand(1, 10),
+                'meta_event_id' => rand(1, 10)
             ]);
         }
     }

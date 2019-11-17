@@ -1,6 +1,6 @@
 <?php
 
-Use App\Category;
+use App\Category;
 use Illuminate\Database\Seeder;
 
 class CategoriesTableSeeder extends Seeder
@@ -13,10 +13,10 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         Category::truncate();
-        $categories=['goodies', 'pulls'];
-        foreach($categories as $categorie){
+        $categories = ['pulls', 'goodies'];
+        foreach ($categories as $category) {
             Category::create([
-                'label' => $categorie,
+                'label' => $category
             ]);
         }
     }

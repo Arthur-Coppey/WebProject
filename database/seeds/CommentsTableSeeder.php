@@ -1,6 +1,7 @@
 <?php
 
-use App\Comments;
+use App\Comment;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class CommentsTableSeeder extends Seeder
@@ -13,10 +14,10 @@ class CommentsTableSeeder extends Seeder
     public function run()
     {
         Comment::truncate();
-        $faker = \Faker\Factory::create();
+        $faker = Factory::create();
         for ($i = 0; $i < 10; $i++){
-            $eventOrIdea = rand(1, 2);
-            if($eventOrIdea = 0){
+            $eventOrIdea = rand(0, 1);
+            if($eventOrIdea){
                 Comment::create([
                     'content' => $faker->sentence($nbWords = 6, $variableNbWords = true),
                     'user_id' => rand(1, 10),

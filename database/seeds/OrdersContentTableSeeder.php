@@ -12,10 +12,10 @@ class OrdersContentTableSeeder extends Seeder
      */
     public function run()
     {
-        OrderContent::troncate();
+        OrderContent::truncate();
         for ($i = 0; $i < 10; $i++){
         OrderContent::create([
-            'amout' => rand(1, 10),
+            'amount' => rand(1, 10),
             'product_id' => rand(1,10),
             'order_id' => rand(1, 10)
         ]);
