@@ -60,11 +60,25 @@ class User extends Authenticatable
             ->withPivot(['amount']);
     }
 
-    public function votes() {
+    public function ideasLikes() {
         return $this->belongsToMany('App\Idea', 'ideas_likes')
-            ->as('vote')
+            ->as('ideasLikes')
             ->using('App\IdeaLike')
-            ->withPivot(['like']);
+            ->withPivot(['ideaLike']);
+    }
+
+    public function commentsLikes() {
+        return $this->belongsToMany('App\Comment', 'comments_likes')
+            ->as('commentsLikes')
+            ->using('App\CommentLike')
+            ->withPivot(['commentLike']);
+    }
+
+    public function picturesLikes() {
+        return $this->belongsToMany('App\Picture', 'pictures_likes')
+            ->as('picturesLikes')
+            ->using('App\PictureLike')
+            ->withPivot(['pictureLike']);
     }
 
     public function pictures() {
@@ -88,6 +102,6 @@ class User extends Authenticatable
         return $this->hasMany('App\Notification');
     }
 
-    
+
 
 }
