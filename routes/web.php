@@ -256,3 +256,10 @@ Route::post('/commentDelete', function () {
     App\Comment::where('id', request('comment_id'))->first()->delete();
     return redirect('/event');
 });
+
+Route::get('image-upload', 'ImageUploadController@imageUpload')->name('image.upload');
+Route::post('image-upload', 'ImageUploadController@imageUploadPost')->name('image.upload.post');
+
+Route::get('imageUpload', function () {
+    return view('imageUpload');
+});

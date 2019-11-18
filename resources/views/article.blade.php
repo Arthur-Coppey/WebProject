@@ -38,6 +38,7 @@
                 @php
                 $id = \Auth::user()->id;
                 $event_id=App\Event::where('id', $id)->first()->id;
+                
                 @endphp
 
                 @if ( App\Participant::where('event_id', $event_id)->first() == null)
@@ -92,6 +93,56 @@
                     </a>
                 </button>
             </form>
+            
+            <div class="container">
+   
+                <div class="panel panel-primary">
+                  <div class="panel-body">
+               
+                    @if ($message = Session::get('success'))
+                    
+                    @php
+                        $imgName = Session::get('image');
+                        $imageURL = "/images/".$imgName;
+
+                        App\Picture::create([
+                        'URI'=> $imageURL,
+                        'event_id'=> $event_id,
+                        'product_id'=> 0,
+                        'user_id' => $user_id
+                    ]);
+                    @endphp
+                    @endif
+              
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <strong>Whoops!</strong> There were some problems with your input.
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+              
+                    <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row">
+              
+                            <div class="col-md-6">
+                                <input type="file" name="image" class="form-control">
+                            </div>
+               
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-success">Upload</button>
+                            </div>
+               
+                        </div>
+                    </form>
+              
+                  </div>
+                </div>
+            </div>
             @endguest
 
             <h2 class="comment-section-title">Commentaires :</h2>
@@ -140,6 +191,20 @@
             </div>
 
             @endforeach
+
+            @php
+                $picture = App\Picture::where('event_id', $event_id)->get();
+                $url = App\Picture::all()->get('URL');
+            @endphp
+
+            @foreach ($picture as $m=>$item)
+            <span>{{$user_first_name}} {{$user_last_name}} </span>
+
+                <img src="{{ $picture[$m]->URI }}">
+
+            @endforeach
+
+
         </div>
     </main>
 
