@@ -109,7 +109,7 @@
                         'URI'=> $imageURL,
                         'event_id'=> $event_id,
                         'product_id'=> 0,
-                        'user_id' => $user_id
+                        'user_id' => $id
                     ]);
                     @endphp
                     @endif
@@ -193,16 +193,19 @@
             @endforeach
 
             @php
-                $picture = App\Picture::where('event_id', $event_id)->get();
+                $picture = App\Picture::where('event_id', App\Event::where('id', $id)->first('id')['id'])->get();
                 $url = App\Picture::all()->get('URL');
+                echo App\Event::where('id', $id)->first();
+
             @endphp
 
             @foreach ($picture as $m=>$item)
-            <span>{{$user_first_name}} {{$user_last_name}} </span>
+            
+            {{-- <span>{{$user_first_name}} {{$user_last_name}} </span> --}}
 
                 <img src="{{ $picture[$m]->URI }}">
 
-            @endforeach
+            @endforeach 
 
 
         </div>
