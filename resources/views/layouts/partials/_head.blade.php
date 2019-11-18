@@ -30,6 +30,7 @@
 <link href="/style/profil.css" rel="stylesheet">
 <link href="/style/shop.css" rel="stylesheet">
 <link href="/style/boiteIdees.css" rel="stylesheet">
+<link href="/style/event.css" rel="stylesheet">
 
 <!-- W3 -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">

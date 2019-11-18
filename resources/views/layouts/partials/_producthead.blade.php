@@ -1,7 +1,7 @@
 <!-- Base -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{$label}}</title>
+<title>Boutique : {{$label}}</title>
 
 <!-- JS -->
 <script src="/js/sideBar.js"></script>
