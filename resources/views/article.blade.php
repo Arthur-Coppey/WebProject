@@ -127,50 +127,59 @@
               
                     <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="row">
+                        <div class="row" style="width: 50vw;">
               
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="width: 50vw;">
                                 <input type="file" name="image" class="form-control">
                             </div>
                
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="width: 50vw;">
                                 <button type="submit" class="btn btn-success">Upload</button>
                             </div>
                
                         </div>
                     </form>
-              
                   </div>
                 </div>
             </div>
             @endguest
+        </div>
+        <div>
 
             <h2 class="comment-section-title">Commentaires :</h2>
             @foreach ($event_comments as $event_comment)
-
             @php
             $user_first_name = App\User::where('id', $event_comment->user_id)->first()->first_name;
             $user_last_name = App\User::where('id', $event_comment->user_id)->first()->last_name;
             @endphp
 
 
-            <div class="gallery-item-card-container-event each-comment" style="border: 1px solid rgba(107, 104, 104, 0.658);">
-                <div class="gallery-item-card-event">
+            <div class="gallery-item-card-container-event each-comment" style="border: 1px solid rgba(107, 104, 104, 0.658); width: 20%">
+                <table class="gallery-item-card-event">
 
-                    <div class="core-info-cell-event">
+                    <tbody class="core-info-cell-event">
 
-                        <div class="user-name-event">
-                            <span>{{$user_first_name}} {{$user_last_name}} </span>
+                        <tr class="user-name-event">
+                            <td>
+                                <h3 class="comm-titles">Par : </h3>
+                            </td>
+                            <td>
+                                <span>{{$user_first_name}} {{$user_last_name}} </span>
+                            </td>
+                        </tr>
 
-                        </div>
+                        <tr class="desc-event">
+                            <td>
+                                <h3 class="comm-titles">Commentaire : </h3>
+                            </td>
+                            <td>
+                                <span>{{$event_comment->content}}</div>
+                            </td>
+                        </tr>
 
-                        <div class="desc-event">
-                            <div class="description">{{$event_comment->content}}</div>
-                        </div>
+                    </tbody>
 
-                    </div>
-
-                </div>
+                </table>
                 @guest
                 @else
                 @if ((App\User::where('id', ($id))->first()->role_id)==2 | (App\User::where('id', ($id))->first()->role_id)==3)
