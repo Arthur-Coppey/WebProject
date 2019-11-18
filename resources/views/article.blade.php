@@ -36,9 +36,9 @@
                 @else
                 @if (strtotime($event_date) > strtotime(date('Y-m-d')))
                 @php
-                $id = \Auth::user()->id;
+                $id = Auth::user()->id;
                 $event_id=App\Event::where('id', $id)->first()->id;
-                
+
                 @endphp
 
                 @if ( App\Participant::where('event_id', $event_id)->first() == null)
@@ -76,7 +76,7 @@
             <div class="col-auto d-none d-lg-block">
                 <img src="/img/event/soireeBde.png" alt="{{$article->label}}">
             </div>
-            
+
             @guest
             <button onclick="location.href='../login';" type="submit" id="submitBut"
             class="btn btn-primary btn-block">Connecte toi pour commenter</button>
@@ -93,27 +93,27 @@
                     </a>
                 </button>
             </form>
-            
+
             <div class="container">
-   
+
                 <div class="panel panel-primary">
                   <div class="panel-body">
-               
+
                     @if ($message = Session::get('success'))
-                    
+
                     @php
                         $imgName = Session::get('image');
-                        $imageURL = "/images/".$imgName;
+                        $imageURL = "/img/".$imgName;
 
                         App\Picture::create([
                         'URI'=> $imageURL,
                         'event_id'=> App\Event::where('id', $id)->first()->id,
-                        'product_id'=> 0,
+                        'product_id'=> null,
                         'user_id' => $id
                     ]);
                     @endphp
                     @endif
-              
+
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <strong>Whoops!</strong> There were some problems with your input.
@@ -124,22 +124,22 @@
                             </ul>
                         </div>
                     @endif
-              
+
                     <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-              
+
                             <div class="col-md-6">
                                 <input type="file" name="image" class="form-control">
                             </div>
-               
+
                             <div class="col-md-6">
                                 <button type="submit" class="btn btn-success">Upload</button>
                             </div>
-               
+
                         </div>
                     </form>
-              
+
                   </div>
                 </div>
             </div>
@@ -186,7 +186,7 @@
                 @endif
 
                 @endguest
-                
+
             </div>
 
             @endforeach
