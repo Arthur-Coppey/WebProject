@@ -39,9 +39,10 @@ if($order == 'asc'){
 
 @endphp
 
-@include('layouts/partials/_sort')
+
 
 @section('main')
+@include('layouts/partials/_sort')
     <div class="marketplace-extensions-top">
         <div data-reactroot="">
         <div class="extensions">
