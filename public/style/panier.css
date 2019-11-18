@@ -1,0 +1,83 @@
+/* Panier */
+
+.article-icon {
+    width: 8vw;
+}
+
+.article {
+    border: 1px solid rgba(199, 194, 185, 0.555);
+    border-radius: 15px 50px;
+}
+
+.icon-article-cell {
+    text-align: center;
+}
+
+.cate-photo {
+    text-align: center;
+}
+
+.txt-cate {
+    color: #5c88da;
+    font-weight: 600;
+    font-family: Roboto, sans-serif;
+    font-size: 1.5vw;
+}
+
+.text-articles-panier {
+    font-size: 1vw;
+}
+
+.totaux {
+    margin: auto;
+}
+
+.txt-totaux {
+    font-weight: 700;
+}
+
+.list-articles {
+    margin: auto;
+}
+
+#submitBut {
+    width: auto;
+    font-family: roboto, sans-serif;
+    font-size: 1em;
+    margin-right: 1vw;
+    border: none;
+    padding: 0.3vw;
+    color: white;
+    background-color: #5c88da;
+    border: white;
+    border-radius: 20px;
+    margin-left: 77%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+#submitBut:hover {
+    background-color: rgb(255, 194, 82);
+}
+
+.payer-text {
+    font-size: 1vw;
+    width: 80px;
+}
+
+.paypal-paiment {
+    width: 20%;
+    margin-left: 61%;
+}
+
+.payer-text:hover {
+    background-color: rgb(255, 194, 82);
+}
+
+.on-right {
+    text-align: right;
+}
+
+/* td {
+    border: 1px solid black;
+} */

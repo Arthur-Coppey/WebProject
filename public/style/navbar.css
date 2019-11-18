@@ -1,0 +1,56 @@
+.headerTable tr {
+    box-shadow: 0 2px 4px -2px black;
+    width: auto;
+}
+
+.headerMiddle {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 3vw;
+    vertical-align: middle;
+}
+
+.header-title {
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 3vw;
+}
+
+.navvbarImg {
+    text-align: left;
+}
+
+.headerRight {
+    margin: 10px;
+    height: 2.5vw;
+    width: 7vw;
+}
+
+.loginRegisterText {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    font-size: 1vw;
+    color: white;
+}
+
+.user-shop {
+    font-size: 3vw;
+    color: #5c88da;
+    margin: 2vw;
+    margin-right: 4vw;
+}
+
+.user-shop:hover {
+    color: rgb(255, 194, 82);
+}
+
+#btnGauche {
+    background-color: #5c88da;
+}
+
+#btnDroit {
+    background-color: #a8b3c3;
+}

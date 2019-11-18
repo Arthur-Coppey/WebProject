@@ -1,0 +1,80 @@
+/* Body */
+
+/* contour de la banniere */
+.banniereBde {
+    margin: 0 auto;
+    width: 75%;
+    height: 100%;
+}
+
+/* image de la banniere */
+.banniere {
+    width: 100%;
+    height: auto;
+    border: 3px solid black;
+}
+
+/* trait de séparation entre le titre et le contenu
+    des cases articles/évvénements */
+.traitSeparation {
+    height: 1px;
+}
+
+/* case "nos prochains événements" */
+.nextEvents {
+    background-color: #a8b3c3;
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 2px solid black;
+}
+
+/* case "articles" */
+.shopPreview {
+    background-color: #a8b3c3;
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 2px solid black;
+}
+
+/* titre des 2 sections événements et articles */
+.bodyTitle {
+    text-align: center;
+    color: black;
+    padding-top: 2vw;
+    font-family: sans-serif;
+}
+
+/* traits de séparation dans articles et événements */
+.traitSeparation {
+    margin: 0 auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+/* tableau dans la case événements */
+.events {
+    margin-top: 1vw;
+}
+
+/* tableau dans la case articles */
+.articles {
+    margin-top: 1vw;
+}
+
+/* images dans la case événements */
+.imgEvent {
+    width: 16vw;
+    height: auto;
+}
+
+/* images dans la case articles */
+.imgArticles {
+    width: 16vw;
+    height: auto;
+}

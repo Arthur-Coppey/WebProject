@@ -1,0 +1,16 @@
+/* Page d'un évènement */
+
+.comment-section-title {
+    font-family: sans-serif;
+}
+
+.publish-comment-title {
+    font-size: 1vw;
+    color: white;
+    font-family: sans-serif;
+}
+
+.desc-event-img {
+    width: 16vw;
+    height: auto;
+}
