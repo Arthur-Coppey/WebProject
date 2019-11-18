@@ -4,23 +4,53 @@
 @section('navbar')
 
      @include('layouts/partials/_navbar')
-     
 
 @endsection('navbar')
+
+@php
+if (in_array($by ?? '', ['label', 'price', 'created_at', 'updated_at']) == false) {
+    $by = 'created_at';
+}
+
+if (!empty($search)) {
+    $search = '%'.$search.'%';
+}
+
+if (empty($order)){
+    $order = 'asc';
+}
+
+if($order == 'asc'){
+    if (empty($search)){
+        $products = App\Product::all()->sortBy($by);
+    } else {
+        $products = App\Product::where('label', 'like', $search)->orWhere('description', 'like', $search)->get();
+        //$products = $products->sortBy($by);
+    }
+} else {
+        if (empty($search)){
+        $products = App\Product::all()->sortByDesc($by);
+    } else {
+        $products = App\Product::where('label', 'like', $search)->orWhere('description', 'like', $search)->get();
+        //$products = $products->sortByDesc($by);
+    }
+}
+
+
+@endphp
+
+@include('layouts/partials/_sort')
+
 @section('main')
+    <div class="marketplace-extensions-top">
+        <div data-reactroot="">
+        <div class="extensions">
+            <div class="gallery-items">
 
-<div class="marketplace-extensions-top">
-	<div data-reactroot="">
-		<div class="extensions">
-			<div class="gallery-items">
 
+            <!-- début block -->
+            <!-- aria-label pour une future bar de recherche -->
 
-				<!-- début block -->
-				<!-- aria-label pour une future bar de recherche -->
-				@php
-					$products = App\Product::all()->sortByDesc('created_at');
-					
-				@endphp
 				@foreach ($products as $product)
 				@php
 					$label = $product->label;
@@ -39,9 +69,9 @@
 								<div class="core-info-second-row">
 									<div class="price">
 										<span>{{$product->price}}€</span>
-										
+
 									</div>
-									
+
 								</div>
 							</div>
 						</div>
@@ -61,13 +91,13 @@
 <div class="clearfix">
 </div>
 
-@guest 
+@guest
 @if (Route::has('register'))
 
 @endif
 {{-- connecter --}}
 @else
-@if ((App\User::where('id', (\Auth::user()->id))->first()->role_id)==2 | (App\User::where('id', (\Auth::user()->id))->first()->role_id)==3)
+@if ((App\User::where('id', (Auth::user()->id))->first()->role_id)==2 | (App\User::where('id', (Auth::user()->id))->first()->role_id)==3)
 
 <div class="del-add">
 	<form method="POST" action="{{ 'addProduct' }}">
@@ -167,9 +197,9 @@
 @endif
 @endguest
 
-				
-				
-			
+
+
+
 
 
 

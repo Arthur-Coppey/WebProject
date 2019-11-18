@@ -20,7 +20,11 @@ Route::get('event', function () {
 });
 
 Route::get('shop', function () {
-    return view('shop');
+    return view('shop', [
+        'by' => request('by'),
+        'order' => request('order'),
+        'search' => request('search')
+    ]);
 });
 
 Route::get('contact', function () {
