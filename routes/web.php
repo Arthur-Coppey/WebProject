@@ -257,6 +257,19 @@ Route::post('/commentDelete', function () {
     return redirect('/event');
 });
 
+Route::post('/addIdeaLike', function () {
+    App\IdeaLike::create([
+        'like' => '1',
+        'user_id'=>  Auth::user()->id,
+        'idea_id'=> request('idea_id')
+    ]);
+    return redirect('/boiteIdees');
+});
+
+Route::post('/deleteIdeaLike', function () {
+    App\IdeaLike::where('user_id', Auth::user()->id)->where('idea_id', request('idea_id'))->delete();
+    return redirect('/boiteIdees');
+});
 Route::get('image-upload', 'ImageUploadController@imageUpload')->name('image.upload');
 Route::post('image-upload', 'ImageUploadController@imageUploadPost')->name('image.upload.post');
 
