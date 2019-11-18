@@ -79,10 +79,14 @@ Route::post('create-event', function () {
 Route::post('/shop/addBasket', function () {
 
     $id = Auth::user()->id;
+    $amount = request('amount');
+    if (gettype($amount) != "integer") {
+        $amount = 1;
+    }
     App\Basket::create([
-      'amount' => request('amount'),
-      'user_id' => $id,
-      'product_id' => request('product_id')
+        'amount' => $amount,
+        'user_id' => $id,
+        'product_id' => request('product_id')
     ]);
 
     return redirect('/shop');

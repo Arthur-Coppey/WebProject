@@ -39,9 +39,10 @@ if($order == 'asc'){
 
 @endphp
 
-@include('layouts/partials/_sort')
+
 
 @section('main')
+@include('layouts/partials/_sort')
     <div class="marketplace-extensions-top">
         <div data-reactroot="">
         <div class="extensions">
@@ -60,7 +61,7 @@ if($order == 'asc'){
 					<div class="gallery-item-card" >
 						<div class="cover">
 							<div class="icon-cell">
-								<img class="icon" src="img/shop/1.jpg" alt="label bdd">
+								<img class="icon" src="{{$product->pictures->first()->URI ?? ''}}" alt="label bdd">
 							</div>
 							<div class="core-info-cell">
 								<div class="name">

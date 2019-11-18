@@ -17,15 +17,15 @@
                 <tr>
                     <td align="center">
                         <img class="imgEvent" src="img/event/soireeBde.png">
-                        <p class="eventName" style="font-size: 1vw;">Evénement 1</p>
+                        <p class="eventName" style="font-size: 1vw;">Soirée d'intégration 2019</p>
                     </td>
                     <td align="center">
-                        <img class="imgEvent" src="img/event/image.png">
-                        <p class="eventName" style="font-size: 1vw;">Evénement 2</p>
+                        <img class="imgEvent" src="img/event/barBde.png">
+                        <p class="eventName" style="font-size: 1vw;">Soirée fin de projet 19/11</p>
                     </td>
                     <td align="center">
-                        <img class="imgEvent" src="img/event/image.png">
-                        <p class="eventName" style="font-size: 1vw;">Evénement 3</p>
+                        <img class="imgEvent" src="img/event/kartBde.png">
+                        <p class="eventName" style="font-size: 1vw;">Après-midi Karting Jeudi 21/11</p>
                     </td>
                 </tr>
             </tbody>

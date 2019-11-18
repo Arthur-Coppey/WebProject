@@ -38,7 +38,7 @@
                 @php
                 $id = \Auth::user()->id;
                 $event_id=App\Event::where('id', $id)->first()->id;
-                
+
                 @endphp
 
                 @if ( App\Participant::where('event_id', $event_id)->first() == null)
@@ -76,7 +76,7 @@
             <div class="col-auto d-none d-lg-block">
                 <img src="/img/event/soireeBde.png" alt="{{$article->label}}">
             </div>
-            
+
             @guest
             <button onclick="location.href='../login';" type="submit" id="submitBut"
             class="btn btn-primary btn-block">Connecte toi pour commenter</button>
@@ -93,27 +93,27 @@
                     </a>
                 </button>
             </form>
-            
+
             <div class="container">
-   
+
                 <div class="panel panel-primary">
                   <div class="panel-body">
-               
+
                     @if ($message = Session::get('success'))
-                    
+
                     @php
                         $imgName = Session::get('image');
-                        $imageURL = "/images/".$imgName;
+                        $imageURL = "/img/".$imgName;
 
                         App\Picture::create([
                         'URI'=> $imageURL,
                         'event_id'=> App\Event::where('id', $id)->first()->id,
-                        'product_id'=> 0,
+                        'product_id'=> null,
                         'user_id' => $id
                     ]);
                     @endphp
                     @endif
-              
+
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <strong>Whoops!</strong> There were some problems with your input.
@@ -124,30 +124,30 @@
                             </ul>
                         </div>
                     @endif
-              
+
                     <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row" style="width: 50vw;">
-              
+
                             <div class="col-md-6" style="width: 50vw;">
                                 <input type="file" name="image" class="form-control">
                             </div>
-               
+
                             <div class="col-md-6" style="width: 50vw;">
                                 <button type="submit" class="btn btn-success">Upload</button>
                             </div>
-               
+
                         </div>
                     </form>
+
                   </div>
                 </div>
             </div>
             @endguest
-        </div>
-        <div>
 
             <h2 class="comment-section-title">Commentaires :</h2>
             @foreach ($event_comments as $event_comment)
+
             @php
             $user_first_name = App\User::where('id', $event_comment->user_id)->first()->first_name;
             $user_last_name = App\User::where('id', $event_comment->user_id)->first()->last_name;
@@ -196,7 +196,7 @@
                 @endif
 
                 @endguest
-                
+
             </div>
 
             @endforeach
@@ -207,12 +207,12 @@
             @endphp
 
             @foreach ($picture as $m=>$item)
-            
+
             {{-- <span>{{$user_first_name}} {{$user_last_name}} </span> --}}
 
                 <img class="desc-event-img" src="{{ $picture[$m]->URI }}">
 
-            @endforeach 
+            @endforeach
 
         </div>
     </main>

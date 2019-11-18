@@ -27,9 +27,11 @@ class DatabaseSeeder extends Seeder
             CommentsTableSeeder::class,
             IdeasTableSeeder::class,
             IdeasLikesTableSeeder::class,
-            NotificationsTableSeeder::class,    
+            NotificationsTableSeeder::class,
             SubscribersTableSeeder::class,
             PicturesTableSeeder::class,
+            PicturesLikesTableSeeder::class,
+            CommentsLikesTableSeeder::class
         ]);
         Schema::enableForeignKeyConstraints();
     }

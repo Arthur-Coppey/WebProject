@@ -1,0 +1,33 @@
+/* Outils de recherche pour les articles du magasin */
+
+.sort-criter {
+    border: 2px solid #5c88da;
+    border-radius: 20px;
+}
+
+.sort-criter:hover {
+    border: 2px solid rgb(255, 194, 82);
+}
+
+.search-box {
+    border: 2px solid #5c88da;
+    border-radius: 20px;
+    padding-left: 0.3vw;
+    padding-right: 0.3vw;
+}
+
+.search-box:hover {
+    border: 2px solid rgb(255, 194, 82);
+}
+
+.search-butt {
+    background-color: #5c88da;
+    border: none;
+    padding-left: 0.3vw;
+    padding-right: 0.3vw;
+    color: white;
+}
+
+.search-butt:hover {
+    background-color: rgb(255, 194, 82);
+}
