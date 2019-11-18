@@ -39,7 +39,7 @@
         <tbody>
             <tr class="article">
                 <td class="icon-article-cell">
-                    <img class="article-icon" src="img/boof.png">
+                    <img class="article-icon" src="{{App\Product::find($value->product_id)->pictures->first()->URI ?? ''}}">
                 </td>
                 <td class="nom-article on-right">
                     <a class="text-articles-panier text-nom">
