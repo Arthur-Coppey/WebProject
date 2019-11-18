@@ -246,11 +246,9 @@ Route::post('/addComment', function () {
     return redirect('/event');
 });
 
-<<<<<<< HEAD
 Route::get('reportEvent', 'SendReport@mailsend');
-=======
+
 Route::post('/commentDelete', function () {
     App\Comment::where('id', request('comment_id'))->first()->delete();
     return redirect('/event');
 });
->>>>>>> 3eae42c27183ead3358a4fb981135711886dc4fd

@@ -121,7 +121,7 @@
                 </div>
                 @guest
                 @else
-                @if ((App\User::where('id', ($user_id))->first()->role_id)==2 )
+                @if ((App\User::where('id', ($user_id))->first()->role_id)==2 | (App\User::where('id', ($user_id))->first()->role_id)==3)
                 <!--pas de lien fais faire la fonction de supression-->
                 <form method="POST" action="{{ '/commentDelete' }}">
                     @csrf
@@ -129,11 +129,10 @@
                     <input type="text" name="comment_id" value={{$event_comment->id}} hidden>
                     <button type="submit" id="submitBut" class="btn btn-primary btn-block">supprimer</button>
                 </form>
-                @endif
-                @if ((App\User::where('id', ($user_id))->first()->role_id)==3)
                 <a href="../reportEvent"><button type="submit" id="reportEvent" class="btn btn-primary btn-block">Signaler</button>
                 </a>
-                @endif  
+                @endif
+
                 @endguest
                 
             </div>
