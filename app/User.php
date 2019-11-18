@@ -64,21 +64,21 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Idea', 'ideas_likes')
             ->as('ideasLikes')
             ->using('App\IdeaLike')
-            ->withPivot(['ideaLike']);
+            ->withPivot(['like']);
     }
 
     public function commentsLikes() {
         return $this->belongsToMany('App\Comment', 'comments_likes')
             ->as('commentsLikes')
             ->using('App\CommentLike')
-            ->withPivot(['commentLike']);
+            ->withPivot(['like']);
     }
 
     public function picturesLikes() {
         return $this->belongsToMany('App\Picture', 'pictures_likes')
             ->as('picturesLikes')
             ->using('App\PictureLike')
-            ->withPivot(['pictureLike']);
+            ->withPivot(['like']);
     }
 
     public function pictures() {

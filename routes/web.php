@@ -263,3 +263,5 @@ Route::post('image-upload', 'ImageUploadController@imageUploadPost')->name('imag
 Route::get('imageUpload', function () {
     return view('imageUpload');
 });
+
+Route::get('imageDownload', 'ImageDownloadController@imageDownload');
