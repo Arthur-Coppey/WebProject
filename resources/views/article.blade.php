@@ -201,14 +201,8 @@
             @endforeach
 
             @php
-<<<<<<< HEAD
-                $picture = App\Picture::where('event_id', App\Event::where('id', $id)->first('id')['id'])->get();
-=======
                 $picture = App\Picture::where('event_id', App\Event::where('id', $id)->first()->id)->get();
->>>>>>> 3cf4da9ed8cce2aa28344e540af04bc796537603
                 $url = App\Picture::all()->get('URL');
-                echo App\Event::where('id', $id)->first();
-
             @endphp
 
             @foreach ($picture as $m=>$item)
