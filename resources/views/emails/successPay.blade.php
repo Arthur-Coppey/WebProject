@@ -18,11 +18,7 @@
 {{-- connecter --}}
 @else
 
-    <h1>Votre commande à bien était passé</h1>
-
-
-
-
+    <h1>Votre commande à bien été passeé</h1>
 
 @endguest
 

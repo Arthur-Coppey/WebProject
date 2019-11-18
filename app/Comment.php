@@ -19,5 +19,11 @@ class Comment extends Model
     public function event() {
         return $this->belongsTo('App\Event');
     }
-    
+
+    public function likes() {
+        return $this->belongsToMany('App\User', 'comments_likes')
+            ->as('likes')
+            ->using('App\CommentLike')
+            ->withPivot(['likes']);
+    }
 }

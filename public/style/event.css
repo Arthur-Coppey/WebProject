@@ -1,0 +1,14 @@
+/* Page d'un évènement */
+
+.comment-section-title {
+    font-family: sans-serif;
+}
+
+.publish-comment-title {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    font-size: 1vw;
+    color: white;
+    font-family: sans-serif;
+}

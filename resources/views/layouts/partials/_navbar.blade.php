@@ -47,7 +47,9 @@
             </td>
 
             <td class="headerMiddle">
-                <p>BDE BORDEAUX</p>
+                <h1 class="header-title">
+                    BDE BORDEAUX
+                </h1>
             </td>
             <td>
                 {{-- pas connecter --}}
@@ -56,14 +58,14 @@
                 <td>
                     <button type="button" class="headerRight btn btn-primary btn-sm" id="btnGauche">
                         <a href="/register" style="text-decoration: none">
-                            <p class="loginRegisterText">Inscription</p>
+                            <h3 class="loginRegisterText">Inscription</h3>
                         </a>
                     </button>
                 </td>
                 <td>
                     <button type="button" class="ouvrir headerRight btn btn-secondary btn-sm" id="btnDroit">
                         <a href="/login" class="bouton-test" style="text-decoration: none">
-                            <p class="loginRegisterText">Connexion</p>
+                            <h3 class="loginRegisterText">Connexion</h3>
                         </a>
                     </button>       
                 </td>

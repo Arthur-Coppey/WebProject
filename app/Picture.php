@@ -26,4 +26,11 @@ class Picture extends Model
     public function event() {
         return $this->belongsTo('App\Event');
     }
+
+    public function likes() {
+        return $this->belongsToMany('App\User', 'pictures_likes')
+            ->as('likes')
+            ->using('App\PictureLike')
+            ->withPivot(['likes']);
+    }
 }

@@ -12,6 +12,12 @@
     vertical-align: middle;
 }
 
+.header-title {
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 3vw;
+}
+
 .navvbarImg {
     text-align: left;
 }

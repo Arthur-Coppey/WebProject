@@ -36,7 +36,7 @@
                 @else
                 @if (strtotime($event_date) > strtotime(date('Y-m-d')))
                 @php
-                $user_id = \Auth::user()->id;
+                $id = \Auth::user()->id;
                 $event_id=App\Event::where('id', $id)->first()->id;
                 
                 @endphp
@@ -72,15 +72,11 @@
                 @endif
                 @endguest
 
-
-
             </div>
             <div class="col-auto d-none d-lg-block">
-                <img src="/img/boof.png" alt="{{$article->label}}">
+                <img src="/img/event/soireeBde.png" alt="{{$article->label}}">
             </div>
-
-
-            <h2 class="contact-title">Commentaires</h2>
+            
             @guest
             <button onclick="location.href='../login';" type="submit" id="submitBut"
             class="btn btn-primary btn-block">Connecte toi pour commenter</button>
@@ -88,9 +84,14 @@
             <form method="POST" action="{{ '/addComment' }}">
                 @csrf
                 <!-- il faudrat peut être changer value,je sais pas si j'utilise la bonne fonction addComment-->
-                <input type="text" size="1000" style="height: 100px" name="content" placeholder="commentaire...">
+                <input type="text" size="1000" style="height: 3vw; font-size: 2vw;" name="content" placeholder="Ajouter un commentaire">
                 <input type="text" name="event_id" value={{$id}} hidden>
-                <button type="submit" id="submitBut" class="btn btn-primary btn-block">publier</button>
+
+                <button style="background-color: #5c88da; border: none;" type="submit" class="btn btn-primary publish-comment-butt">
+                    <a style="text-decoration: none;">
+                        <h3 class="publish-comment-title">Publier</h3>
+                    </a>
+                </button>
             </form>
             
             <div class="container">
@@ -144,6 +145,7 @@
             </div>
             @endguest
 
+            <h2 class="comment-section-title">Commentaires :</h2>
 
             @foreach ($event_comments as $event_comment)
 
@@ -158,12 +160,12 @@
 
                     <div class="core-info-cell-event">
 
-                        <div class="name-event">
+                        <div class="user-name-event">
                             <span>{{$user_first_name}} {{$user_last_name}} </span>
 
                         </div>
 
-                        <div class="item-details-event">
+                        <div class="desc-event">
                             <div class="description">{{$event_comment->content}}</div>
                         </div>
 
@@ -172,7 +174,7 @@
                 </div>
                 @guest
                 @else
-                @if ((App\User::where('id', ($user_id))->first()->role_id)==2 | (App\User::where('id', ($user_id))->first()->role_id)==3)
+                @if ((App\User::where('id', ($id))->first()->role_id)==2 | (App\User::where('id', ($id))->first()->role_id)==3)
                 <!--pas de lien fais faire la fonction de supression-->
                 <form method="POST" action="{{ '/commentDelete' }}">
                     @csrf
