@@ -5,10 +5,12 @@
 }
 
 .publish-comment-title {
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: center;
     font-size: 1vw;
     color: white;
     font-family: sans-serif;
+}
+
+.desc-event-img {
+    width: 16vw;
+    height: auto;
 }

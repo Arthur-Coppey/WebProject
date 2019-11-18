@@ -107,9 +107,9 @@
 
                         App\Picture::create([
                         'URI'=> $imageURL,
-                        'event_id'=> $event_id,
+                        'event_id'=> App\Event::where('id', $id)->first()->id,
                         'product_id'=> 0,
-                        'user_id' => $user_id
+                        'user_id' => $id
                     ]);
                     @endphp
                     @endif
@@ -146,7 +146,6 @@
             @endguest
 
             <h2 class="comment-section-title">Commentaires :</h2>
-
             @foreach ($event_comments as $event_comment)
 
             @php
@@ -193,17 +192,16 @@
             @endforeach
 
             @php
-                $picture = App\Picture::where('event_id', $event_id)->get();
+                $picture = App\Picture::where('event_id', App\Event::where('id', $id)->first()->id)->get();
                 $url = App\Picture::all()->get('URL');
             @endphp
 
             @foreach ($picture as $m=>$item)
             <span>{{$user_first_name}} {{$user_last_name}} </span>
 
-                <img src="{{ $picture[$m]->URI }}">
+                <img class="desc-event-img" src="{{ $picture[$m]->URI }}">
 
             @endforeach
-
 
         </div>
     </main>
