@@ -27,8 +27,7 @@ class DatabaseSeeder extends Seeder
             CommentsTableSeeder::class,
             IdeasTableSeeder::class,
             IdeasLikesTableSeeder::class,
-            NotificationsTableSeeder::class,
-            ParticipantsTableSeeder::class,
+            NotificationsTableSeeder::class,    
             SubscribersTableSeeder::class,
             PicturesTableSeeder::class,
         ]);
