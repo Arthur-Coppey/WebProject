@@ -192,6 +192,7 @@
                 </form>
                 <a href="../reportEvent"><button type="submit" id="reportEvent" class="btn btn-primary btn-block">Signaler</button>
                 </a>
+                
                 @endif
 
                 @endguest

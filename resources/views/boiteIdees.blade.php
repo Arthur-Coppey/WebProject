@@ -16,7 +16,7 @@ $ideas = App\Idea::all()->sortByDesc('created_at');
 @foreach ($ideas as $idea)
 @php
 $title = $idea->title;
-$idea_id = $idea->id
+$idea_id = $idea->id;
 @endphp
 
 <div class="gallery-item-card">
@@ -30,20 +30,20 @@ $idea_id = $idea->id
             </div>
         </div>
     </div>
-    @if (App\IdeaLike::all()->where('idea_id',$idea_id)->where('user_id', Auth::user())->find(11) == false)
-    <form action="{{'deleteIdeaLike'}}" method="POST">
-        @csrf
-        <input type="text" name="idea_id"  value={{$idea_id}} hidden>
-        <button type="submit" id="submitBut">oui</button>
-    </form>  
-    @else
     <form action="{{'addIdeaLike'}}" method="POST">
         @csrf
-        <input type="text" name="idea_id"  value={{$idea_id}} hidden>
+        <input type="text" name="idea_id" value={{$idea_id}} hidden>
         <button type="submit" id="submitBut"><i class="far fa-thumbs-up"></i></button>
-    </form>   
-    @endif
-    
+    </form>
+    <form action="{{'deleteIdeaLike'}}" method="POST">
+        @csrf
+        <input type="text" name="idea_id" value={{$idea_id}} hidden>
+        <button type="submit" id="submitBut"><i class="far fa-thumbs-down"></i>
+        </button>
+    </form>
+
+
+
 </div>
 @endforeach
 
