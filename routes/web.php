@@ -270,3 +270,11 @@ Route::post('/deleteIdeaLike', function () {
     App\IdeaLike::where('user_id', Auth::user()->id)->where('idea_id', request('idea_id'))->delete();
     return redirect('/boiteIdees');
 });
+Route::get('image-upload', 'ImageUploadController@imageUpload')->name('image.upload');
+Route::post('image-upload', 'ImageUploadController@imageUploadPost')->name('image.upload.post');
+
+Route::get('imageUpload', function () {
+    return view('imageUpload');
+});
+
+Route::get('imageDownload', 'ImageDownloadController@imageDownload');

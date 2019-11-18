@@ -31,6 +31,6 @@ class Picture extends Model
         return $this->belongsToMany('App\User', 'pictures_likes')
             ->as('likes')
             ->using('App\PictureLike')
-            ->withPivot(['likes']);
+            ->withPivot(['like']);
     }
 }
