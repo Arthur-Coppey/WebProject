@@ -24,6 +24,6 @@ class Comment extends Model
         return $this->belongsToMany('App\User', 'comments_likes')
             ->as('likes')
             ->using('App\CommentLike')
-            ->withPivot(['likes']);
+            ->withPivot(['like']);
     }
 }
