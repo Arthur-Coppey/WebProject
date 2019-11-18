@@ -83,7 +83,7 @@
             <form method="POST" action="{{ '/addComment' }}">
                 @csrf
                 <!-- il faudrat peut être changer value,je sais pas si j'utilise la bonne fonction addComment-->
-                <input type="text" size="1000" style="height: 3vw; font-size: 2vw;" name="content" placeholder="Ajouter un commentaire">
+                <input type="text" size="1000" style="height: 50px; font-size: 25px;" name="content" placeholder="Ajouter un commentaire">
                 <input type="text" name="event_id" value={{$id}} hidden>
 
                 <button style="background-color: #5c88da; border: none;" type="submit" class="btn btn-primary publish-comment-butt">
@@ -104,7 +104,7 @@
             @endphp
 
 
-            <div class="gallery-item-card-container-event">
+            <div class="gallery-item-card-container-event each-comment" style="border: 1px solid rgba(107, 104, 104, 0.658);">
                 <div class="gallery-item-card-event">
 
                     <div class="core-info-cell-event">
