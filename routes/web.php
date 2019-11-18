@@ -256,3 +256,17 @@ Route::post('/commentDelete', function () {
     App\Comment::where('id', request('comment_id'))->first()->delete();
     return redirect('/event');
 });
+
+Route::post('/addIdeaLike', function () {
+    App\IdeaLike::create([
+        'like' => '1',
+        'user_id'=>  Auth::user()->id,
+        'idea_id'=> request('idea_id')
+    ]);
+    return redirect('/boiteIdees');
+});
+
+Route::post('/deleteIdeaLike', function () {
+    App\IdeaLike::where('user_id', Auth::user()->id)->where('idea_id', request('idea_id'))->delete();
+    return redirect('/boiteIdees');
+});

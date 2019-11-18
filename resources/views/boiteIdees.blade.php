@@ -1,38 +1,53 @@
 @extends('layouts.index')
 @section('navbar')
 
-     @include('layouts/partials/_navbar')
-     
+@include('layouts/partials/_navbar')
+
 
 @endsection('navbar')
 @section('main')
 
 @php
-    $idea = App\Idea::all()->sortByDesc('created_at');
+$ideas = App\Idea::all()->sortByDesc('created_at');
 @endphp
 
 <h2 class="ideas-list-title">Liste des Idées</h2>
 
-@foreach ($idea as $idea)
-    @php
-        $title = $idea->title;
-    @endphp
+@foreach ($ideas as $idea)
+@php
+$title = $idea->title;
+$idea_id = $idea->id
+@endphp
 
-        <div class="gallery-item-card">
-            <div class="cover">
-                <div class="core-info-cell single-idea">
-                    <div class="idea-title-div">
-                        <h2 class="desc-idee">Titre : {{$idea->title}}</h2>
-                    </div>
-                    <div class="idea-title-div">
-                        <h2 class="desc-idee">Description : {{$idea->description}}</h2>
-                    </div>
-                </div>
+<div class="gallery-item-card">
+    <div class="cover">
+        <div class="core-info-cell single-idea">
+            <div class="idea-title-div">
+                <h2 class="desc-idee">Titre : {{$idea->title}}</h2>
+            </div>
+            <div class="idea-title-div">
+                <h2 class="desc-idee">Description : {{$idea->description}}</h2>
             </div>
         </div>
+    </div>
+    @if (App\IdeaLike::all()->where('idea_id',$idea_id)->where('user_id', Auth::user())->find(11) == false)
+    <form action="{{'deleteIdeaLike'}}" method="POST">
+        @csrf
+        <input type="text" name="idea_id"  value={{$idea_id}} hidden>
+        <button type="submit" id="submitBut">oui</button>
+    </form>  
+    @else
+    <form action="{{'addIdeaLike'}}" method="POST">
+        @csrf
+        <input type="text" name="idea_id"  value={{$idea_id}} hidden>
+        <button type="submit" id="submitBut"><i class="far fa-thumbs-up"></i></button>
+    </form>   
+    @endif
+    
+</div>
 @endforeach
 
-@guest 
+@guest
 {{-- ¨Pas co --}}
 @if (Route::has('register'))
 
@@ -56,7 +71,7 @@
                         <a href="/login" class="bouton-test" style="text-decoration: none">
                             <p class="loginRegisterText">Connexion</p>
                         </a>
-                    </button>       
+                    </button>
                 </td>
             </tr>
         </table>
@@ -78,7 +93,7 @@
                         <tr>
                             <td class="input-desc">
                                 <a>
-                                Nom :
+                                    Nom :
                                 </a>
                             </td>
                             <td class="input-form">
@@ -108,38 +123,39 @@
     </center>
 </form>
 
-@if ((App\User::where('id', (\Auth::user()->id))->first()->role_id)==2 | (App\User::where('id', (\Auth::user()->id))->first()->role_id)==3)
+@if ((App\User::where('id', (\Auth::user()->id))->first()->role_id)==2 | (App\User::where('id',
+(\Auth::user()->id))->first()->role_id)==3)
 
 <form method="POST" action="{{ 'suppIdeas' }}">
-        @csrf
-        <center>
-            <h2 class="del-title">Supprimer une Idée</h2>
-            <div class="del-idea">
-                <div class="del-idea-box">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="input-desc">
-                                    <a>
-                                        Nom :
-                                    </a>
-                                </td>
-                                <td class="input-form">
-                                    <div>
-                                        <input type="text" name="titleIdeaAdd">
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button class="del-text-butt">
-                        <a class="del-text" style="text-decoration: none; color: white;">
-                            Supprimer une Idée
-                        </a>
-                    </button>
-                </div>
+    @csrf
+    <center>
+        <h2 class="del-title">Supprimer une Idée</h2>
+        <div class="del-idea">
+            <div class="del-idea-box">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="input-desc">
+                                <a>
+                                    Nom :
+                                </a>
+                            </td>
+                            <td class="input-form">
+                                <div>
+                                    <input type="text" name="titleIdeaAdd">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="del-text-butt">
+                    <a class="del-text" style="text-decoration: none; color: white;">
+                        Supprimer une Idée
+                    </a>
+                </button>
             </div>
-        </center>
+        </div>
+    </center>
 </form>
 @endif
 @endguest
