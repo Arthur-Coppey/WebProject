@@ -15,6 +15,6 @@ class SendMail extends Controller
         ];
 
         \Mail::to('serverBDE@bdebordeaux.com')->send(new alertPayement($details));
-        return view('successPay');
+        return view('/emails/successPay');
     }
 }

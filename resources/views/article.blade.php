@@ -121,10 +121,14 @@
                 </div>
                 @guest
                 @else
-                @if ((App\User::where('id', ($user_id))->first()->role_id)==2 | (App\User::where('id', ($user_id))->first()->role_id)==3)
+                @if ((App\User::where('id', ($user_id))->first()->role_id)==2 )
                 <!--pas de lien fais faire la fonction de supression-->
                 <button type="submit" id="submitBut" class="btn btn-primary btn-block">supprimer</button>
                 @endif
+                @if ((App\User::where('id', ($user_id))->first()->role_id)==3)
+                <a href="../reportEvent"><button type="submit" id="reportEvent" class="btn btn-primary btn-block">Signaler</button>
+                </a>
+                @endif  
                 @endguest
                 
             </div>

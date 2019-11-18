@@ -243,3 +243,5 @@ Route::post('/addComment', function () {
     ]);
     return redirect('/event');
 });
+
+Route::get('reportEvent', 'SendReport@mailsend');

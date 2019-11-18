@@ -79,7 +79,7 @@
 
             <div class="name-event">
               <span>{{$user_first_name}} {{$user_last_name}} </span>
-
+              
             </div>
 
             <div class="item-details-event">
